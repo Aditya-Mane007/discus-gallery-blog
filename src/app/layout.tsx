@@ -28,15 +28,13 @@ export default function RootLayout({
       <head>
         <meta name="google-adsense-account" content="ca-pub-3441215479960974" />
       </head>
-      <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9PB58NJFLD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9PB58NJFLD');
-</script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-9PB58NJFLD"></script>
+      <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-9PB58NJFLD');
+      </script>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
