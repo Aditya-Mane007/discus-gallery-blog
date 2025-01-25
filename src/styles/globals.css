@@ -51,7 +51,7 @@ body {
       rgba(42, 89, 138, 0.4) 23%,
       rgba(30, 63, 97, 0.2) 92%
     ),
-    url("../../public/assets/HeroBackgroundImage.jpg");
+    url("/assets/HeroBackgroundImage.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -72,7 +72,7 @@ body {
         rgba(42, 89, 138, 0.4) 23%,
         rgba(30, 63, 97, 0.2) 92%
       ),
-      url("../../public/assets/HeroBackgroundImage.jpg");
+      url("/assets/HeroBackgroundImage.jpg");
     background-repeat: no-repeat;
     background-size: auto;
     background-position: center;
