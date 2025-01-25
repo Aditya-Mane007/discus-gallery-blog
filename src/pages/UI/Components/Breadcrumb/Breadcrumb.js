@@ -5,7 +5,7 @@ import { IoIosArrowForward } from "react-icons/io";
 function Breadcrumb({ items }) {
   return (
     <div className="w-full flex items-center">
-      {items.map((item) => (
+      {items?.map((item) => (
         <Link
           href={item.link}
           className={`flex items-center mr-1 font-normal ${
