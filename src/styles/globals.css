@@ -1,21 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: doner;
+  src: url("/fonts/Doner-RegularDisplay.otf");
 }
 
-@media (prefers-color-scheme: dark) {
+:root {
+  --background: #ffffff;
+  --foreground: #333333;
+}
+
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #333333;
+    --foreground: #ffffff;
   }
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-margin-top: -3rem;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Rubik", serif;
+  scroll-behavior: smooth;
+  background: linear-gradient(
+    48deg,
+    rgba(78, 160, 186, 0.25) 23%,
+    rgba(150, 195, 208, 0.25) 92%
+  );
+}
+
+.heroSection {
+  background: linear-gradient(
+      48deg,
+      rgba(42, 89, 138, 0.4) 23%,
+      rgba(30, 63, 97, 0.2) 92%
+    ),
+    url("../../public/assets/HeroBackgroundImage.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.graident {
+  background: linear-gradient(
+    48deg,
+    rgba(32, 43, 50, 0.6) 23%,
+    rgba(243, 243, 243, 0.277777) 92%
+  );
+}
+
+@media screen and (max-width: 768px) {
+  .heroSection {
+    background: linear-gradient(
+        48deg,
+        rgba(42, 89, 138, 0.4) 23%,
+        rgba(30, 63, 97, 0.2) 92%
+      ),
+      url("../../public/assets/HeroBackgroundImage.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+  }
+}
+
+#faq {
+  scroll-margin-top: 0.5rem;
 }
