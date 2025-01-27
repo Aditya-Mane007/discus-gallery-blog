@@ -115,29 +115,7 @@ function index() {
         <div className="slider-container">
           <Slider {...setting}>
             <div>
-              <div className="w-[300px] h-[400px] mr-5 rounded-xl relative flex justify-end items-end graident">
-                <div className="w-full h-full rounded-2xl absolute -z-10 ">
-                  <Image
-                    src="/assets/HeroBackgroundImage.jpg"
-                    width={1000}
-                    height={1000}
-                    className="w-full h-full object-cover rounded-xl"
-                  />
-                </div>
-                <div className="z-10 bg-transparent  w-[90%] mx-auto my-4 ">
-                  <h5 className="text-[#FFFFFF]">posted on 12 january 2024</h5>
-                  <h4 className="text-3xl text-[#FFFFFF]">
-                    {"Water Conditions for discus fish: A Comprehensive Guide".slice(
-                      0,
-                      60
-                    )}
-                    ...
-                  </h4>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="w-[300px] h-[400px] mx-5 rounded-2xl  relative flex justify-end items-end graident">
+              <div className="w-[300px] h-[400px]  rounded-2xl  relative flex justify-end items-end graident">
                 <div className="w-full h-full rounded-2xl absolute -z-10 ">
                   <Image
                     src="/assets/HeroBackgroundImage.jpg"
@@ -251,7 +229,7 @@ function index() {
           </Slider>
         </div>
         <Link
-          href="/"
+          href={`/blog/${tab.replaceAll(" ", "-").toLowerCase()}`}
           className="w-fit bg-orange  flex items-center rounded-xl p-3 text-background mr-4 my-4 font-doner"
           style={{ wordSpacing: ".2rem" }}
         >
