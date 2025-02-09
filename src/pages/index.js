@@ -82,8 +82,8 @@ function index() {
     <>
       <div className="2xl:container 2xl:mx-auto w-full h-[40rem] heroSection ">
         <div className="2xl:container 2xl:mx-auto w-full h-[88.5%] my-auto flex justify-center items-center text-background">
-          <div className="md:w-[80%] md:text-5xl text-3xl text-center font-bold">
-            Your guide to discus fish care, covering diet, water quality,
+          <div className="md:w-[80%] md:text-5xl text-3xl max-sm:text-4xl text-center font-bold">
+            Your guide to Discus fish care, covering diet, water quality,
             maintenance, and thriving aquariums!
           </div>
         </div>
@@ -115,7 +115,7 @@ function index() {
         <div className="slider-container">
           <Slider {...setting}>
             <div>
-              <div className="w-[300px] h-[400px]  rounded-2xl  relative flex justify-end items-end graident">
+              <div className="w-[300px] h-[400px] rounded-2xl relative flex justify-end items-end graident">
                 <div className="w-full h-full rounded-2xl absolute -z-10 ">
                   <Image
                     src="/assets/HeroBackgroundImage.jpg"
@@ -137,7 +137,7 @@ function index() {
               </div>
             </div>
             <div>
-              <div className="w-[300px] h-[400px] mx-5 rounded-2xl  relative flex justify-end items-end graident">
+              <div className="w-[300px] h-[400px] mx-3 rounded-2xl  relative flex justify-end items-end graident">
                 <div className="w-full h-full rounded-2xl absolute -z-10 ">
                   <Image
                     src="/assets/HeroBackgroundImage.jpg"
@@ -161,7 +161,7 @@ function index() {
               </div>
             </div>
             <div>
-              <div className="w-[300px] h-[400px] mx-5 rounded-2xl  relative flex justify-end items-end graident">
+              <div className="w-[300px] h-[400px] mx-3 rounded-2xl  relative flex justify-end items-end graident">
                 <div className="w-full h-full rounded-2xl absolute -z-10 ">
                   <Image
                     src="/assets/HeroBackgroundImage.jpg"
@@ -183,7 +183,7 @@ function index() {
               </div>
             </div>
             <div>
-              <div className="w-[300px] h-[400px] mx-5 rounded-2xl  relative flex justify-end items-end graident">
+              <div className="w-[300px] h-[400px] mx-3 rounded-2xl  relative flex justify-end items-end graident">
                 <div className="w-full h-full rounded-2xl absolute -z-10 ">
                   <Image
                     src="/assets/HeroBackgroundImage.jpg"
@@ -205,7 +205,7 @@ function index() {
               </div>
             </div>
             <div>
-              <div className="w-[300px] h-[400px] mx-5 rounded-2xl  relative flex justify-end items-end graident">
+              <div className="w-[300px] h-[400px] mx-3 rounded-2xl  relative flex justify-end items-end graident">
                 <div className="w-full h-full rounded-2xl absolute -z-10 ">
                   <Image
                     src="/assets/HeroBackgroundImage.jpg"
