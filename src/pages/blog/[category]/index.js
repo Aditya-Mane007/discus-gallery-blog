@@ -22,11 +22,12 @@ function index({ category }) {
         <FaInfoCircle
           size={20}
           title={`Click to read about ${modifyTitle(category)}`}
+          className="text-blue"
         />
       </div>
       {showInfo && (
-        <div className="max-md:px-4">
-          <div className="w-[35%] max-lg:w-full h-fit bg-blue lg:sticky md:top-20 mb-8 p-4 rounded-xl max-lg:block hidden ">
+        <div className="max-sm:px-4">
+          <div className="w-full max-lg:w-full h-fit bg-blue lg:sticky md:top-20 mb-8 p-4 rounded-xl max-lg:block hidden">
             <h1 className="text-[#ffffff] text-4xl font-doner">
               {modifyTitle(category)}
             </h1>
@@ -42,7 +43,7 @@ function index({ category }) {
         </div>
       )}
 
-      <div className="w-[35%] max-lg:w-full h-fit bg-blue sticky top-20 md:p-4 rounded-xl lg:block hidden">
+      <div className="w-[35%] max-lg:w-full h-fit bg-blue sticky top-20 p-4 rounded-xl lg:block hidden">
         <h1 className="text-[#ffffff] text-4xl font-doner">
           {modifyTitle(category)}
         </h1>
@@ -55,7 +56,7 @@ function index({ category }) {
           deleniti! Ex, voluptatibusr
         </h2>
       </div>
-      <div className="lg:pl-4 max-md:px-4">
+      <div className="lg:pl-4 max-lg max-sm:px-4">
         <Breadcrumb items={items} />
         <div className="my-8 grid lg:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-4 max-sm:grid-cols-1">
           <div>
