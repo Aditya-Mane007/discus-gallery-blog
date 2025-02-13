@@ -10,7 +10,6 @@ export default function App({ Component, pageProps }) {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      console.log(scrollY);
       window.scrollY > 12 ? setIsSticky(true) : setIsSticky(false);
     });
   }, []);

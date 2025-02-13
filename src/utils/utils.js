@@ -8,3 +8,49 @@ export const modifyTitle = (text) => {
 
   return modifiedText;
 };
+
+const Months = {
+  0: "Jan",
+  1: "Feb",
+  2: "Mar",
+  3: "Apr",
+  4: "May",
+  5: "Jun",
+  6: "Jul",
+  7: "Aug",
+  8: "Sep",
+  9: "Oct",
+  10: "Nov",
+  11: "Dec",
+};
+
+export const formateDate = (dateString) => {
+  const d = new Date("2025-02-12T22:45:47+05:30");
+  const date = d.getDate();
+  const month = Months[d.getMonth()];
+  const year = d.getFullYear();
+
+  return `${date} ${month}, ${year}`;
+};
+
+const BASE_URL = "http://localhost:5000";
+
+export const fetchData = async (endpoint) => {
+  const options = {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_JWT_TOKEN}`,
+    },
+  };
+  try {
+    const res = await fetch(BASE_URL + endpoint, options);
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+    const data = await res.json();
+
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
