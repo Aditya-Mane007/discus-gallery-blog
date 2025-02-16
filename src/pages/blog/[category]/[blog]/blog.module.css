@@ -1,9 +1,55 @@
 .title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
+  line-height: 1rem;
 }
 
 .heading2 {
   font-size: 1.5rem;
   font-weight: 5;
+}
+
+.blogContent {
+  font-weight: 400;
+}
+
+.blogContent .paragraph {
+  margin: 0.5rem 0;
+
+  font-size: 1.1rem;
+}
+
+.Headiing2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0 0;
+  font-family: doner;
+  letter-spacing: 0.1rem;
+}
+
+.blogContent .Headiing2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0 0;
+  font-family: doner;
+  letter-spacing: 0.1rem;
+}
+
+.blogContent .Heading2Paragraph {
+  font-size: 1.1rem;
+}
+
+.blogContent .listTitle {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0.5rem 0 0.25rem 0;
+}
+
+.blogContent .listTitle + ul {
+  margin: 0 0 1rem 2rem;
+}
+
+.listUl li {
+  list-style: disc;
+  font-size: 1.1rem;
 }

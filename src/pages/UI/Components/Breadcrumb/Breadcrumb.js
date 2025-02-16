@@ -4,7 +4,7 @@ import { IoIosArrowForward } from "react-icons/io";
 
 function Breadcrumb({ items }) {
   return (
-    <div className="w-full flex items-center">
+    <div className="w-full flex flex-wrap items-center md:px-0 px-4">
       {items?.map((item, index) => (
         <Link
           key={index}
@@ -13,7 +13,7 @@ function Breadcrumb({ items }) {
             item.active ? "text-darkBlue" : "text-[#212121]"
           }`}
         >
-          {item.title} <IoIosArrowForward />
+          {item.title} {item.icon && <IoIosArrowForward />}
         </Link>
       ))}
     </div>

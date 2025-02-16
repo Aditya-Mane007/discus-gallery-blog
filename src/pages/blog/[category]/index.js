@@ -10,8 +10,8 @@ function index({ category, categoryPosts, categoryInfo }) {
   const [showInfo, setShowInfo] = useState(true);
   const [showToolTip, setShowToolTip] = useState(false);
   const items = [
-    { title: "Home", link: "/" },
-    { title: "Blog", link: "/blog" },
+    { title: "Home", link: "/", icon: true },
+    { title: "Blog", link: "/blog", icon: true },
     {
       title: categoryInfo.data.name,
       link: categoryInfo.data.slug,
