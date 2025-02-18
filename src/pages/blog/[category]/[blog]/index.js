@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import styles from "./blog.module.css";
 import Image from "next/image";
-import GoogleAnalytics from "@/utils/GoogleAnalytics";
+
 
 function index({ category, slug, post, tags }) {
   const [htmlContent, setHtmlContent] = useState("");
@@ -22,7 +22,7 @@ function index({ category, slug, post, tags }) {
 
   return (
     <>
-      <GoogleAnalytics />
+
       <div className="container mx-auto pt-8">
         <Breadcrumb items={items} />
         <div className="my-4 md:flex px-4 md:px-0">

@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaInfoCircle } from "react-icons/fa";
 import { IoIosCloseCircle } from "react-icons/io";
-import GoogleAnalytics from "@/utils/GoogleAnalytics";
+
 
 function index({ category, categoryPosts, categoryInfo }) {
   const [showInfo, setShowInfo] = useState(true);
@@ -22,7 +22,6 @@ function index({ category, categoryPosts, categoryInfo }) {
 
   return (
     <>
-      <GoogleAnalytics />
       <div className="container mx-auto my-8 w-full lg:flex">
         <div
           className="hidden max-lg:flex max-lg:justify-end my-2 max-sm:px-4 cursor-pointer relative"

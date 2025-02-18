@@ -8,7 +8,6 @@ import Link from "next/link";
 import { MdArrowOutward } from "react-icons/md";
 import FAQ from "./UI/Components/FAQ/FAQ";
 import { fetchData } from "@/utils/utils";
-import GoogleAnalytics from "@/utils/GoogleAnalytics";
 
 const tabs = [
   "Care & Maintenance",
@@ -72,7 +71,6 @@ function index({ categories }) {
   };
   return (
     <>
-      <GoogleAnalytics />
       <div className="2xl:container 2xl:mx-auto w-full h-[40rem] heroSection ">
         <div className="2xl:container 2xl:mx-auto w-full h-[88.5%] my-auto flex justify-center items-center text-background">
           <div className="md:w-[80%] md:text-5xl text-3xl max-sm:text-4xl text-center font-bold">
