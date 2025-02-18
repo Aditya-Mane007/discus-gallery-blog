@@ -4,6 +4,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .custom-container {
+    @apply max-w-[90%] mx-auto;
+  }
+  @screen sm {
+    .custom-container {
+      @apply min-w-[95%];
+    }
+  }
+  @screen md {
+    .custom-container {
+      @apply min-w-[95%];
+    }
+  }
+  @screen lg {
+    .custom-container {
+      @apply min-w-[95%];
+    }
+  }
+}
+
 @font-face {
   font-family: doner;
   src: url("/fonts/Doner-RegularDisplay.otf");
@@ -36,7 +57,9 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "Rubik", serif;
+  /* font-family: "Rubik", serif; */
+  font-family: "Rubik";
+
   scroll-behavior: smooth;
   background: linear-gradient(
     48deg,

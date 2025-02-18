@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MdArrowOutward } from "react-icons/md";
 import FAQ from "./UI/Components/FAQ/FAQ";
+import { fetchData } from "@/utils/utils";
 
 const tabs = [
   "Care & Maintenance",
@@ -17,8 +18,8 @@ const tabs = [
   "Species & Types",
 ];
 
-function index() {
-  const [tab, setTab] = useState("Care & Maintenance");
+function index({ categories }) {
+  const [tab, setTab] = useState(categories.data[0].title);
   const settings = {
     className: "slider variable-width",
     dots: false,
@@ -29,11 +30,6 @@ function index() {
     variableWidth: true,
     arrows: false,
     swipeToSlide: true,
-    afterChange: function (index) {
-      console.log(
-        `Slider Changed to: ${index + 2}, background: #222; color: #bada55`
-      );
-    },
     responsive: [
       {
         breakpoint: 768,
@@ -57,11 +53,6 @@ function index() {
     variableWidth: true,
     arrows: false,
     swipeToSlide: true,
-    afterChange: function (index) {
-      console.log(
-        `Slider Changed to: ${index + 2}, background: #222; color: #bada55`
-      );
-    },
     responsive: [
       {
         breakpoint: 768,
@@ -82,8 +73,8 @@ function index() {
     <>
       <div className="2xl:container 2xl:mx-auto w-full h-[40rem] heroSection ">
         <div className="2xl:container 2xl:mx-auto w-full h-[88.5%] my-auto flex justify-center items-center text-background">
-          <div className="md:w-[80%] md:text-5xl text-3xl text-center font-bold">
-            Your guide to discus fish care, covering diet, water quality,
+          <div className="md:w-[80%] md:text-5xl text-3xl max-sm:text-4xl text-center font-bold">
+            Your guide to Discus fish care, covering diet, water quality,
             maintenance, and thriving aquariums!
           </div>
         </div>
@@ -91,23 +82,24 @@ function index() {
       <div className="my-8 container mx-auto w-[95%] ">
         <div className="slider-container">
           <Slider {...settings}>
-            {tabs.map((tabtext) => (
-              <div>
-                <p
-                  className={`py-4 px-6 cursor-pointer mr-1 border-none rounded-full font-doner ${
-                    tab === tabtext
-                      ? "bg-orange hover:opacity-95"
-                      : "bg-blue hover:bg-darkBlue"
-                  } 
+            {categories &&
+              categories.data.map((category) => (
+                <div>
+                  <p
+                    className={`py-4 px-6 cursor-pointer mr-1 border-none rounded-full font-doner ${
+                      category.title === tab
+                        ? "bg-orange hover:opacity-95"
+                        : "bg-blue hover:bg-darkBlue"
+                    } 
                     text-background
                       border-r-2 border-r-foreground `}
-                  style={{ wordSpacing: ".2rem" }}
-                  onClick={() => handleTabChange(tabtext)}
-                >
-                  {tabtext}
-                </p>
-              </div>
-            ))}
+                    style={{ wordSpacing: ".2rem" }}
+                    onClick={() => handleTabChange(category.title)}
+                  >
+                    {category.title}
+                  </p>
+                </div>
+              ))}
           </Slider>
         </div>
       </div>
@@ -115,7 +107,7 @@ function index() {
         <div className="slider-container">
           <Slider {...setting}>
             <div>
-              <div className="w-[300px] h-[400px]  rounded-2xl  relative flex justify-end items-end graident">
+              <div className="w-[300px] h-[400px] rounded-2xl relative flex justify-end items-end graident">
                 <div className="w-full h-full rounded-2xl absolute -z-10 ">
                   <Image
                     src="/assets/HeroBackgroundImage.jpg"
@@ -137,7 +129,7 @@ function index() {
               </div>
             </div>
             <div>
-              <div className="w-[300px] h-[400px] mx-5 rounded-2xl  relative flex justify-end items-end graident">
+              <div className="w-[300px] h-[400px] mx-3 rounded-2xl  relative flex justify-end items-end graident">
                 <div className="w-full h-full rounded-2xl absolute -z-10 ">
                   <Image
                     src="/assets/HeroBackgroundImage.jpg"
@@ -161,7 +153,7 @@ function index() {
               </div>
             </div>
             <div>
-              <div className="w-[300px] h-[400px] mx-5 rounded-2xl  relative flex justify-end items-end graident">
+              <div className="w-[300px] h-[400px] mx-3 rounded-2xl  relative flex justify-end items-end graident">
                 <div className="w-full h-full rounded-2xl absolute -z-10 ">
                   <Image
                     src="/assets/HeroBackgroundImage.jpg"
@@ -183,7 +175,7 @@ function index() {
               </div>
             </div>
             <div>
-              <div className="w-[300px] h-[400px] mx-5 rounded-2xl  relative flex justify-end items-end graident">
+              <div className="w-[300px] h-[400px] mx-3 rounded-2xl  relative flex justify-end items-end graident">
                 <div className="w-full h-full rounded-2xl absolute -z-10 ">
                   <Image
                     src="/assets/HeroBackgroundImage.jpg"
@@ -205,7 +197,7 @@ function index() {
               </div>
             </div>
             <div>
-              <div className="w-[300px] h-[400px] mx-5 rounded-2xl  relative flex justify-end items-end graident">
+              <div className="w-[300px] h-[400px] mx-3 rounded-2xl  relative flex justify-end items-end graident">
                 <div className="w-full h-full rounded-2xl absolute -z-10 ">
                   <Image
                     src="/assets/HeroBackgroundImage.jpg"
@@ -244,5 +236,15 @@ function index() {
     </>
   );
 }
+
+export const getServerSideProps = async () => {
+  const categories = await fetchData("/api/posts/getCategories");
+
+  return {
+    props: {
+      categories,
+    },
+  };
+};
 
 export default index;
