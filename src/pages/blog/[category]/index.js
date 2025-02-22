@@ -6,8 +6,8 @@ import Link from "next/link";
 import { FaInfoCircle } from "react-icons/fa";
 import { IoIosCloseCircle } from "react-icons/io";
 
-
 function index({ category, categoryPosts, categoryInfo }) {
+  console.log(categoryInfo);
   const [showInfo, setShowInfo] = useState(true);
   const [showToolTip, setShowToolTip] = useState(false);
   const items = [
@@ -108,8 +108,18 @@ function index({ category, categoryPosts, categoryInfo }) {
 
 export const getServerSideProps = async (context) => {
   const { category } = context.query;
-  const categoryInfo = await fetchData(`/api/posts/category/${category}`);
-  const categoryPosts = await fetchData(`/api/posts/${category}`);
+
+  const categoryInfo = await fetchData(
+    process.env.NEXT_PUBLIC_API_URL,
+    `/${category}/getCategoryInfo`,
+    process.env.NEXT_PUBLIC_JWT_TOKEN
+  );
+
+  const categoryPosts = await fetchData(
+    process.env.NEXT_PUBLIC_API_URL,
+    `/${category}/getPostsByCategories`,
+    process.env.NEXT_PUBLIC_JWT_TOKEN
+  );
 
   return {
     props: {

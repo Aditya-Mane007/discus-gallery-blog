@@ -5,9 +5,10 @@ import React, { useEffect, useState } from "react";
 import styles from "./blog.module.css";
 import Image from "next/image";
 
-
 function index({ category, slug, post, tags }) {
-  const [htmlContent, setHtmlContent] = useState("");
+  const [htmlContent, setHtmlContent] = useState();
+
+  console.log(post.data.content);
 
   const items = [
     { title: "Home", link: "/", icon: true },
@@ -22,7 +23,6 @@ function index({ category, slug, post, tags }) {
 
   return (
     <>
-
       <div className="container mx-auto pt-8">
         <Breadcrumb items={items} />
         <div className="my-4 md:flex px-4 md:px-0">
@@ -37,18 +37,23 @@ function index({ category, slug, post, tags }) {
               <h2 className="mx-2">|</h2>
               <h2>{post.data.author.name}</h2>
             </span>
-            <Image
-              // src={post.data.featured_image}
-              src="https://discusgallery.wordpress.com/wp-content/uploads/2025/02/discusfish-background.jpg"
-              width={100}
-              height={300}
-              alt={post.data.title}
-              className="w-full h-auto my-4 rounded-xl"
-              unoptimized
-            />
+            {post.data.featured_image && (
+              <Image
+                src={post.data.featured_image}
+                // src="https://discusgallery.wordpress.com/wp-content/uploads/2025/02/discusfish-background.jpg"
+                width={100}
+                height={300}
+                alt={post.data.title}
+                className="w-full h-22 my-4 rounded-xl"
+                unoptimized
+              />
+            )}
 
-            <div className={styles.blogContent}>
-              <p className={styles.paragraph}>
+            <div
+              className={styles.blogContent}
+              dangerouslySetInnerHTML={{ __html: post.data.content }}
+            >
+              {/* <p className={styles.paragraph}>
                 Discus fish (Symphysodon) are known as the “Kings of the
                 Aquarium” due to their stunning colors and graceful movement.
                 However, their beauty comes with a need for strict water
@@ -252,7 +257,7 @@ function index({ category, slug, post, tags }) {
                 ensure your Discus thrive in their aquarium. By following these
                 guidelines, you can create a stable and natural environment that
                 mimics their Amazonian origins.
-              </p>
+              </p> */}
             </div>
           </div>
           <div className="md:w-[40%] md:pl-4 md:my-0 my-4 h-fit sticky top-[4.5rem]">
@@ -288,7 +293,11 @@ function index({ category, slug, post, tags }) {
 export const getServerSideProps = async (context) => {
   const { category, blog } = context.query;
 
-  const getPostBuSlug = await fetchData(`/api/posts/${category}/${blog}`);
+  const getPostBuSlug = await fetchData(
+    process.env.NEXT_PUBLIC_API_URL,
+    `/blog/${blog}/getPostBySlug`,
+    process.env.NEXT_PUBLIC_JWT_TOKEN
+  );
 
   const tagsObject = getPostBuSlug.data.tags;
 

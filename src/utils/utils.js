@@ -33,17 +33,20 @@ export const formateDate = (dateString) => {
   return `${date} ${month}, ${year}`;
 };
 
-const BASE_URL = "http://localhost:5000";
+// const BASE_URL =
+//   process.env.NODE_ENV == "production"
+//     ? process.env.NEXT_PUBLIC_BACKEND_URL
+//     : "http://localhost:3000";
 
-export const fetchData = async (endpoint) => {
+export const fetchData = async (base_url, endpoint, token) => {
   const options = {
     method: "GET",
     headers: {
-      Authorization: `Bearer ${process.env.NEXT_PUBLIC_JWT_TOKEN}`,
+      Authorization: `Bearer ${token}`,
     },
   };
   try {
-    const res = await fetch(BASE_URL + endpoint, options);
+    const res = await fetch(base_url + endpoint, options);
     if (!res.ok) {
       throw new Error("Failed to fetch data");
     }
@@ -53,4 +56,34 @@ export const fetchData = async (endpoint) => {
   } catch (error) {
     console.error(error);
   }
+};
+
+// export const fetchData = async (base_url, endpoint) => {
+//   const options = {
+//     method: "GET",
+//     headers: {
+//       Authorization: `Bearer ${process.env.NEXT_PUBLIC_JWT_TOKEN}`,
+//     },
+//   };
+
+//   try {
+//     const res = await fetch(base_url + endpoint, options);
+
+//     if (!res.ok) {
+//       throw new Error("Failed to fetch data");
+//     }
+//     const data = await res.json();
+
+//     return data;
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
+
+export const CategoryObject = {
+  "care-and-maintenance": "Care and Maintenance",
+  "best-food-for-discus-fish": "Best Food for Discus Fish",
+  "breeding-and-raising-fry": "Breeding and Raising Fry",
+  "health-and-diseases": "Health and Diseases",
+  "species-and-types": "Species and Types",
 };
