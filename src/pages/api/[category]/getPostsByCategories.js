@@ -24,6 +24,7 @@ const handler = async (req, res) => {
         title: post.title,
         slug: post.slug,
         content: post.content,
+        image: post.featured_image,
       };
 
       return formatedPost;
