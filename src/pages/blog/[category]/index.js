@@ -70,13 +70,12 @@ function index({ category, categoryPosts, categoryInfo }) {
                   <Link href={`/blog/${category}/${post.slug}`}>
                     <div className="w-full h-full rounded-xl flex md:flex-col md:justify-start md:items-end sm:bg-blue relative Bluegraident">
                       <div className="w-full max-sm:h-[250px] max-md:h-[250px] h-[225px] rounded-2xl graident relative">
-                        <Image
+                        <img
                           src={post.image}
                           width={100}
                           height={100}
                           className="w-full h-full object-cover rounded-xl max-sm:absolute max-sm:-z-10 Bluegraident"
-                          unoptimized={true}
-                          loading="eager"
+                    
                         />
                       </div>
                       <div className="w-[93%] mx-auto sm:py-4 max-md:mx-4 s max-sm:absolute max-sm:bottom-5 max-sm:left-0">
