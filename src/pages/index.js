@@ -21,6 +21,9 @@ function index({ categories, posts }) {
   const [tab, setTab] = useState(categories.data[0].title);
 
   const [blogPosts, setBlogPosts] = useState(posts.data);
+
+  console.log(blogPosts);
+
   const settings = {
     className: "slider variable-width",
     dots: false,
@@ -130,9 +133,10 @@ function index({ categories, posts }) {
                   <div className="w-[300px] h-[400px] rounded-2xl relative flex justify-end items-end graident">
                     <div className="w-full h-full rounded-2xl absolute -z-10 ">
                       <Image
-                        src="/assets/HeroBackgroundImage.jpg"
+                        src={post.image}
                         width={1000}
                         height={1000}
+                        unoptimized
                         className="w-full h-full object-cover rounded-2xl"
                       />
                     </div>
@@ -149,7 +153,7 @@ function index({ categories, posts }) {
                       </h4>
                       <Link
                         href={`/blog/${CategoryObject[tab]}/${post.slug}`}
-                        className="my-2 text-blue"
+                        className="my-2 text-[#ffffff]"
                       >
                         Read More
                       </Link>
