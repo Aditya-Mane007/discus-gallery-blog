@@ -75,7 +75,8 @@ function index({ category, categoryPosts, categoryInfo }) {
                           width={100}
                           height={100}
                           className="w-full h-full object-cover rounded-xl max-sm:absolute max-sm:-z-10 Bluegraident"
-                          unoptimized
+                          unoptimized={true}
+                          loading="eager"
                         />
                       </div>
                       <div className="w-[93%] mx-auto sm:py-4 max-md:mx-4 s max-sm:absolute max-sm:bottom-5 max-sm:left-0">

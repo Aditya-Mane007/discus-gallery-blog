@@ -45,7 +45,8 @@ function index({ category, slug, post, tags }) {
                 height={250}
                 alt={post.data.title}
                 className="w-full h-[400px] object-cover my-4 rounded-xl"
-                unoptimized
+                unoptimized={true}
+                loading="eager"
               />
             )}
 
