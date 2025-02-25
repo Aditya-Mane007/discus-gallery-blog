@@ -21,27 +21,35 @@ function Breadcrumb({ items }) {
     };
   };
 
-  console.log(generateBreadCrumbSchema());
   return (
     <>
       <Head>
         <script
-          type="applicaiton/ld+json"
-          defer
-          dangerouslySetInnerHTML={{ __html: generateBreadCrumbSchema() }}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateBreadCrumbSchema()),
+          }}
         />
       </Head>
-      <div className="w-full flex flex-wrap items-center md:px-0 px-4">
+      <div
+        className="w-full flex flex-wrap items-center md:px-0 px-4"
+        vocab="https://schema.org/"
+        typeof="BreadcrumbList"
+      >
         {items?.map((item, index) => (
-          <Link
-            key={index}
-            href={item.link}
-            className={`flex items-center mr-1 font-normal ${
-              item.active ? "text-darkBlue" : "text-[#212121]"
-            }`}
-          >
-            {item.title} {item.icon && <IoIosArrowForward />}
-          </Link>
+          <div property="itemListElement" typeof="ListItem">
+            <Link
+              key={index}
+              href={item.link}
+              className={`flex items-center mr-1 font-normal ${
+                item.active ? "text-darkBlue" : "text-[#212121]"
+              }`}
+              property="item"
+              typeof="WebPage"
+            >
+              {item.title} {item.icon && <IoIosArrowForward />}
+            </Link>
+          </div>
         ))}
       </div>
     </>
