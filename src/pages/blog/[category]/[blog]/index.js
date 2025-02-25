@@ -38,15 +38,13 @@ function index({ category, slug, post, tags }) {
               <h2>{post.data.author.name}</h2>
             </span>
             {post.data.featured_image && (
-              <Image
+              <img
                 src={post.data.featured_image}
                 // src="https://discusgallery.wordpress.com/wp-content/uploads/2025/02/discusfish-background.jpg"
                 width={100}
                 height={250}
                 alt={post.data.title}
                 className="w-full h-[400px] object-cover my-4 rounded-xl"
-                unoptimized={true}
-                loading="eager"
               />
             )}
 

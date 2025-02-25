@@ -132,12 +132,10 @@ function index({ categories, posts }) {
                 <div className="mr-4">
                   <div className="w-[300px] h-[400px] rounded-2xl relative flex justify-end items-end graident">
                     <div className="w-full h-full rounded-2xl absolute -z-10 ">
-                      <Image
+                      <img
                         src={post.image}
                         width={100}
                         height={100}
-                        unoptimized={true}
-                        loading="eager"
                         className="w-full h-full object-cover rounded-2xl"
                       />
                     </div>
