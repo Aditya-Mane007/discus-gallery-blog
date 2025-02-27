@@ -8,8 +8,6 @@ import Image from "next/image";
 function index({ category, slug, post, tags }) {
   const [htmlContent, setHtmlContent] = useState();
 
-  console.log(post.data.content);
-
   const items = [
     { title: "Home", link: "/", icon: true },
     { title: "Blog", link: "/blog", icon: true },
@@ -40,9 +38,8 @@ function index({ category, slug, post, tags }) {
             {post.data.featured_image && (
               <img
                 src={post.data.featured_image}
-                // src="https://discusgallery.wordpress.com/wp-content/uploads/2025/02/discusfish-background.jpg"
                 width={100}
-                height={250}
+                height={100}
                 alt={post.data.title}
                 className="w-full h-[400px] object-cover my-4 rounded-xl"
               />

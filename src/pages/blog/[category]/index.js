@@ -5,10 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaInfoCircle } from "react-icons/fa";
 import { IoIosCloseCircle } from "react-icons/io";
+import SeoConfig from "@/pages/UI/Components/SEO/SeoConfig";
+// import BackgroundImage from "../../public/assets/HeroBackgroundImage.jpg";
+import BackgroundImage from "../../../../public/assets/HeroBackgroundImage.jpg";
 
 function index({ category, categoryPosts, categoryInfo }) {
-  console.log(categoryInfo);
-  console.log(categoryPosts);
   const [showInfo, setShowInfo] = useState(true);
   const [showToolTip, setShowToolTip] = useState(false);
   const items = [

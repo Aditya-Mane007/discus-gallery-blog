@@ -16,8 +16,6 @@ const handler = async (req, res) => {
 
   const category = req.query.category;
 
-  console.log("Category", category);
-
   const categories = await fetchData(
     base_url,
     `/categories/slug:${category}`,
@@ -30,15 +28,15 @@ const handler = async (req, res) => {
     });
   }
 
-  const formatedCategoryData = {
-    id: categories.id,
-    name: categories.name,
-    slug: categories.slug,
-    description: categories.description,
-  };
+  // const formatedCategoryData = {
+  //   id: categories.id,
+  //   name: categories.name,
+  //   slug: categories.slug,
+  //   description: categories.description,
+  // };
 
   res.status(200).json({
-    data: formatedCategoryData,
+    data: categories,
   });
 };
 

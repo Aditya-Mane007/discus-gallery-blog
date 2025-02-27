@@ -15,7 +15,6 @@ const handler = async (req, res) => {
       message: posts.message,
     });
   }
-
   const filterdPosts = await posts.posts.map((post) => {
     if (post.terms.category.hasOwnProperty(category)) {
       const formatedPost = {
@@ -26,7 +25,6 @@ const handler = async (req, res) => {
         content: post.content,
         image: post.featured_image,
       };
-
       return formatedPost;
     }
   });

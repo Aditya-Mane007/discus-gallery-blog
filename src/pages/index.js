@@ -8,6 +8,8 @@ import Link from "next/link";
 import { MdArrowOutward } from "react-icons/md";
 import FAQ from "./UI/Components/FAQ/FAQ";
 import { fetchData } from "@/utils/utils";
+import SeoConfig from "./UI/Components/SEO/SeoConfig";
+import BackgroundImage from "../../public/assets/HeroBackgroundImage.jpg";
 
 export const CategoryObject = {
   "Care and Maintenance": "care-and-maintenance",
@@ -19,10 +21,7 @@ export const CategoryObject = {
 
 function index({ categories, posts }) {
   const [tab, setTab] = useState(categories.data[0].title);
-
   const [blogPosts, setBlogPosts] = useState(posts.data);
-
-  console.log(blogPosts);
 
   const settings = {
     className: "slider variable-width",
