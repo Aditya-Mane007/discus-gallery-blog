@@ -23,7 +23,7 @@ function index({ category, slug, post, tags }) {
 
   return (
     <>
-      <div className="container mx-auto pt-8">
+      <div className="container w-[95%] mx-auto pt-8">
         <Breadcrumb items={items} />
         <div className="my-4 md:flex px-4 md:px-0">
           <div className="md:w-[60%] w-full">
