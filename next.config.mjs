@@ -11,6 +11,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "wordpress.com",
       },
+      {
+        protocol: "http",
+        hostname: "discusgallery.files.wordpress.com",
+      },
     ],
   },
   async redirects() {

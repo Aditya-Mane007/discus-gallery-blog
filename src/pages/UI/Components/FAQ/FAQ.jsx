@@ -60,7 +60,6 @@ function FAQ() {
     };
   };
 
-  console.log(generateFAQSchama());
   return (
     <>
       <Head>

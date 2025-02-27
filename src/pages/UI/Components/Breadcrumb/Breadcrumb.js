@@ -32,7 +32,7 @@ function Breadcrumb({ items }) {
         />
       </Head>
       <div
-        className="w-full flex flex-wrap items-center md:px-0 px-4"
+        className="w-full flex flex-wrap items-center md:px-0"
         vocab="https://schema.org/"
         typeof="BreadcrumbList"
       >
