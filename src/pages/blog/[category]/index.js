@@ -23,7 +23,7 @@ function index({ category, categoryPosts, categoryInfo }) {
 
   return (
     <>
-      <div className="container mx-auto my-8 w-full lg:flex">
+      <div className="container w-[95%] mx-auto my-8 lg:flex">
         <div
           className="hidden max-lg:flex max-lg:justify-end my-2 max-sm:px-4 cursor-pointer relative"
           onClick={() => {
@@ -75,7 +75,6 @@ function index({ category, categoryPosts, categoryInfo }) {
                           width={100}
                           height={100}
                           className="w-full h-full object-cover rounded-xl max-sm:absolute max-sm:-z-10 Bluegraident"
-                    
                         />
                       </div>
                       <div className="w-[93%] mx-auto sm:py-4 max-md:mx-4 s max-sm:absolute max-sm:bottom-5 max-sm:left-0">
