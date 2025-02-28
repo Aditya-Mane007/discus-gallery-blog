@@ -132,7 +132,9 @@ function index({ categories, posts }) {
                   <div className="w-[300px] h-[400px] rounded-2xl relative flex justify-end items-end graident">
                     <div className="w-full h-full rounded-2xl absolute -z-10 ">
                       <img
-                        src={post.image}
+                        src={`/api/proxy-image?url=${encodeURIComponent(
+                          post.image
+                        )}`}
                         width={100}
                         height={100}
                         className="w-full h-full object-cover rounded-2xl"
