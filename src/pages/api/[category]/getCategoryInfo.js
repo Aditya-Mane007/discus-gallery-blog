@@ -12,15 +12,9 @@ const base_url = process.env.NEXT_PUBLIC_BASE_URL;
 // };
 
 const handler = async (req, res) => {
-  const token = req.user.wordpressToken;
-
   const category = req.query.category;
 
-  const categories = await fetchData(
-    base_url,
-    `/categories/slug:${category}`,
-    token
-  );
+  const categories = await fetchData(base_url, `/categories/slug:${category}`);
 
   if (categories.status === 404) {
     return res.status(404).json({
@@ -28,16 +22,16 @@ const handler = async (req, res) => {
     });
   }
 
-  // const formatedCategoryData = {
-  //   id: categories.id,
-  //   name: categories.name,
-  //   slug: categories.slug,
-  //   description: categories.description,
-  // };
+  const formatedCategoryData = {
+    id: categories.id,
+    name: categories.name,
+    slug: categories.slug,
+    description: categories.description,
+  };
 
   res.status(200).json({
-    data: categories,
+    data: formatedCategoryData,
   });
 };
 
-export default protect(handler);
+export default handler;
