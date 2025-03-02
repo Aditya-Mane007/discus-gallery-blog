@@ -31,4 +31,4 @@ async function handler(req, res) {
   }
 }
 
-export default protect(handler);
+export default handler;

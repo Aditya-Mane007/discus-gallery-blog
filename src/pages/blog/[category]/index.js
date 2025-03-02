@@ -40,7 +40,7 @@ function index({ category, categoryPosts, categoryInfo }) {
           )}
         </div>
         {showInfo && (
-          <div className="max-sm:px-4">
+          <div className="">
             <div className="w-full max-lg:w-full h-fit bg-blue lg:sticky md:top-20 mb-8 p-4 rounded-xl max-lg:block hidden">
               <h1 className="text-[#ffffff] text-4xl font-doner">
                 {categoryInfo.data.name}
@@ -60,7 +60,7 @@ function index({ category, categoryPosts, categoryInfo }) {
             {categoryInfo.data.description}
           </h2>
         </div>
-        <div className="lg:pl-4 max-lg max-sm:px-4">
+        <div className="lg:pl-4 max-lg">
           <Breadcrumb items={items} />
           <div className="my-8 grid lg:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-4 max-sm:grid-cols-1">
             {categoryPosts && categoryPosts.data.length > 0 ? (

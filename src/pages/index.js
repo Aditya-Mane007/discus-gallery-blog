@@ -27,19 +27,41 @@ function index({ categories, posts }) {
     className: "slider variable-width",
     dots: false,
     infinite: false,
-    focusOnSelect: true,
-    slidesToShow: 2,
-    slidesToScroll: 1,
+    focusOnSelect: false,
     variableWidth: true,
     arrows: false,
-    swipeToSlide: true,
+    slidesToShow: 5,
+    slidesToScroll: 5,
+    swipeToSlide: false,
     responsive: [
+      {
+        breakpoint: 1440,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          focusOnSelect: true,
+          infinite: false,
+          arrows: false,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: false,
+          arrows: false,
+          dots: false,
+        },
+      },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           infinite: false,
+          arrows: false,
           dots: false,
         },
       },
@@ -132,9 +154,7 @@ function index({ categories, posts }) {
                   <div className="w-[300px] h-[400px] rounded-2xl relative flex justify-end items-end graident">
                     <div className="w-full h-full rounded-2xl absolute -z-10 ">
                       <img
-                        src={`/api/proxy-image?url=${encodeURIComponent(
-                          post.image
-                        )}`}
+                        src={post.image}
                         width={100}
                         height={100}
                         className="w-full h-full object-cover rounded-2xl"
@@ -186,14 +206,12 @@ function index({ categories, posts }) {
 export const getServerSideProps = async () => {
   const categories = await fetchData(
     process.env.NEXT_PUBLIC_API_URL,
-    "/getCategories",
-    process.env.NEXT_PUBLIC_JWT_TOKEN
+    "/getCategories"
   );
 
   const posts = await fetchData(
     process.env.NEXT_PUBLIC_API_URL,
-    `/${categories.data[0].slug}/getPostsByCategories`,
-    process.env.NEXT_PUBLIC_JWT_TOKEN
+    `/${categories.data[0].slug}/getPostsByCategories`
   );
 
   return {

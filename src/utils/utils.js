@@ -25,7 +25,7 @@ const Months = {
 };
 
 export const formateDate = (dateString) => {
-  const d = new Date("2025-02-12T22:45:47+05:30");
+  const d = new Date(dateString);
   const date = d.getDate();
   const month = Months[d.getMonth()];
   const year = d.getFullYear();
@@ -33,20 +33,9 @@ export const formateDate = (dateString) => {
   return `${date} ${month}, ${year}`;
 };
 
-// const BASE_URL =
-//   process.env.NODE_ENV == "production"
-//     ? process.env.NEXT_PUBLIC_BACKEND_URL
-//     : "http://localhost:3000";
-
-export const fetchData = async (base_url, endpoint, token) => {
-  const options = {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  };
+export const fetchData = async (base_url, endpoint) => {
   try {
-    const res = await fetch(base_url + endpoint, options);
+    const res = await fetch(base_url + endpoint);
     if (!res.ok) {
       throw new Error("Failed to fetch data");
     }
@@ -57,28 +46,6 @@ export const fetchData = async (base_url, endpoint, token) => {
     console.error(error);
   }
 };
-
-// export const fetchData = async (base_url, endpoint) => {
-//   const options = {
-//     method: "GET",
-//     headers: {
-//       Authorization: `Bearer ${process.env.NEXT_PUBLIC_JWT_TOKEN}`,
-//     },
-//   };
-
-//   try {
-//     const res = await fetch(base_url + endpoint, options);
-
-//     if (!res.ok) {
-//       throw new Error("Failed to fetch data");
-//     }
-//     const data = await res.json();
-
-//     return data;
-//   } catch (error) {
-//     console.error(error);
-//   }
-// };
 
 export const CategoryObject = {
   "care-and-maintenance": "Care and Maintenance",

@@ -4,11 +4,11 @@ import { CategoryObject, fetchData } from "@/utils/utils";
 const base_url = process.env.NEXT_PUBLIC_BASE_URL;
 
 const handler = async (req, res) => {
-  const token = req.user.wordpressToken;
-
   const blogSlug = req.query.blogSlug;
 
-  const post = await fetchData(base_url, `/posts/slug:${blogSlug}`, token);
+  const post = await fetchData(base_url, `/posts/slug:${blogSlug}`);
+
+  console.log(post);
 
   if (post.status === 404) {
     return res.status(404).json({
@@ -21,4 +21,4 @@ const handler = async (req, res) => {
   });
 };
 
-export default protect(handler);
+export default handler;

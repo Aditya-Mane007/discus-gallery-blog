@@ -4,9 +4,7 @@ import { fetchData } from "@/utils/utils";
 const base_url = process.env.NEXT_PUBLIC_BASE_URL;
 
 const handler = async (req, res) => {
-  const token = req.user.wordpressToken;
-
-  const categories = await fetchData(base_url, "/categories", token);
+  const categories = await fetchData(base_url, "/categories");
 
   if (categories.status === 404) {
     return res.status(404).json({
@@ -32,4 +30,4 @@ const handler = async (req, res) => {
   });
 };
 
-export default protect(handler);
+export default handler;
