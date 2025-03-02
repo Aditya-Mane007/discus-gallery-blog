@@ -9,10 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "jsonwebtoken": "^9.0.2",
     "next": "15.1.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-icons": "^5.4.0",
+    "react-icons": "^5.5.0",
     "react-paginate": "^8.2.0",
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1"

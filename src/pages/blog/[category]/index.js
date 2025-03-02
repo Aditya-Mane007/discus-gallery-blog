@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaInfoCircle } from "react-icons/fa";
 import { IoIosCloseCircle } from "react-icons/io";
-
+import SeoConfig from "@/pages/UI/Components/SEO/SeoConfig";
 
 function index({ category, categoryPosts, categoryInfo }) {
   const [showInfo, setShowInfo] = useState(true);
@@ -22,7 +22,7 @@ function index({ category, categoryPosts, categoryInfo }) {
 
   return (
     <>
-      <div className="container mx-auto my-8 w-full lg:flex">
+      <div className="container w-[95%] mx-auto my-8 lg:flex">
         <div
           className="hidden max-lg:flex max-lg:justify-end my-2 max-sm:px-4 cursor-pointer relative"
           onClick={() => {
@@ -40,7 +40,7 @@ function index({ category, categoryPosts, categoryInfo }) {
           )}
         </div>
         {showInfo && (
-          <div className="max-sm:px-4">
+          <div className="">
             <div className="w-full max-lg:w-full h-fit bg-blue lg:sticky md:top-20 mb-8 p-4 rounded-xl max-lg:block hidden">
               <h1 className="text-[#ffffff] text-4xl font-doner">
                 {categoryInfo.data.name}
@@ -60,7 +60,7 @@ function index({ category, categoryPosts, categoryInfo }) {
             {categoryInfo.data.description}
           </h2>
         </div>
-        <div className="lg:pl-4 max-lg max-sm:px-4">
+        <div className="lg:pl-4 max-lg">
           <Breadcrumb items={items} />
           <div className="my-8 grid lg:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-4 max-sm:grid-cols-1">
             {categoryPosts && categoryPosts.data.length > 0 ? (
@@ -69,10 +69,10 @@ function index({ category, categoryPosts, categoryInfo }) {
                   <Link href={`/blog/${category}/${post.slug}`}>
                     <div className="w-full h-full rounded-xl flex md:flex-col md:justify-start md:items-end sm:bg-blue relative Bluegraident">
                       <div className="w-full max-sm:h-[250px] max-md:h-[250px] h-[225px] rounded-2xl graident relative">
-                        <Image
-                          src="/assets/HeroBackgroundImage.jpg"
-                          width={1000}
-                          height={1000}
+                        <img
+                          src={post.image}
+                          width={100}
+                          height={100}
                           className="w-full h-full object-cover rounded-xl max-sm:absolute max-sm:-z-10 Bluegraident"
                         />
                       </div>
@@ -108,8 +108,18 @@ function index({ category, categoryPosts, categoryInfo }) {
 
 export const getServerSideProps = async (context) => {
   const { category } = context.query;
-  const categoryInfo = await fetchData(`/api/posts/category/${category}`);
-  const categoryPosts = await fetchData(`/api/posts/${category}`);
+
+  const categoryInfo = await fetchData(
+    process.env.NEXT_PUBLIC_API_URL,
+    `/${category}/getCategoryInfo`,
+    process.env.NEXT_PUBLIC_JWT_TOKEN
+  );
+
+  const categoryPosts = await fetchData(
+    process.env.NEXT_PUBLIC_API_URL,
+    `/${category}/getPostsByCategories`,
+    process.env.NEXT_PUBLIC_JWT_TOKEN
+  );
 
   return {
     props: {

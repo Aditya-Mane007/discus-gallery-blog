@@ -25,7 +25,7 @@ const Months = {
 };
 
 export const formateDate = (dateString) => {
-  const d = new Date("2025-02-12T22:45:47+05:30");
+  const d = new Date(dateString);
   const date = d.getDate();
   const month = Months[d.getMonth()];
   const year = d.getFullYear();
@@ -33,17 +33,9 @@ export const formateDate = (dateString) => {
   return `${date} ${month}, ${year}`;
 };
 
-const BASE_URL = "http://localhost:5000";
-
-export const fetchData = async (endpoint) => {
-  const options = {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${process.env.NEXT_PUBLIC_JWT_TOKEN}`,
-    },
-  };
+export const fetchData = async (base_url, endpoint) => {
   try {
-    const res = await fetch(BASE_URL + endpoint, options);
+    const res = await fetch(base_url + endpoint);
     if (!res.ok) {
       throw new Error("Failed to fetch data");
     }
@@ -53,4 +45,12 @@ export const fetchData = async (endpoint) => {
   } catch (error) {
     console.error(error);
   }
+};
+
+export const CategoryObject = {
+  "care-and-maintenance": "Care and Maintenance",
+  "best-food-for-discus-fish": "Best Food for Discus Fish",
+  "breeding-and-raising-fry": "Breeding and Raising Fry",
+  "health-and-diseases": "Health and Diseases",
+  "species-and-types": "Species and Types",
 };
