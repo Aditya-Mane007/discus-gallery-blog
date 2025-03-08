@@ -30,8 +30,9 @@ function Footer() {
               Company
             </div>
             <div className="flex flex-col">
-              {NavLinks.map((link) => (
+              {NavLinks.map((link, index) => (
                 <Link
+                  key={index}
                   href={link.link}
                   className="my-1  px-1 text-background underline cursor-pointer hover:text-orange"
                 >
@@ -45,8 +46,9 @@ function Footer() {
               Categories
             </div>
             <div className="flex flex-col">
-              {tabs.map((tab) => (
+              {tabs.map((tab, index) => (
                 <Link
+                  key={index}
                   href="/"
                   className="my-1 px-1 text-background underline cursor-pointer hover:text-orange"
                 >
@@ -70,16 +72,28 @@ function Footer() {
         </div>
         <div className="flex">
           <Link href="/">
-            <FiYoutube className="mx-2 text-2xl text-background hover:text-orange cursor-pointer" />
+            <FiYoutube
+              className="mx-2 text-2xl text-background hover:text-orange cursor-pointer"
+              title="YouTube"
+            />
           </Link>
           <Link href="/">
-            <FiInstagram className="mx-2 text-xl text-background hover:text-orange cursor-pointer" />
+            <FiInstagram
+              className="mx-2 text-xl text-background hover:text-orange cursor-pointer"
+              title="Instagram"
+            />
           </Link>
           <Link href="/">
-            <FiFacebook className="mx-2 text-xl text-background hover:text-orange cursor-pointer" />
+            <FiFacebook
+              className="mx-2 text-xl text-background hover:text-orange cursor-pointer"
+              title="Facebook"
+            />
           </Link>
           <Link href="/">
-            <FaXTwitter className="mx-2 text-xl text-background hover:text-orange cursor-pointer" />
+            <FaXTwitter
+              className="mx-2 text-xl text-background hover:text-orange cursor-pointer"
+              title="Twitter"
+            />
           </Link>
         </div>
       </div>
@@ -88,29 +102,3 @@ function Footer() {
 }
 
 export default Footer;
-
-// <div className="bg-blue text-background p-4">
-// <div className="container mx-auto flex justify-between">
-//   <div className="logo text-4xl font-changa">Discus Gallery</div>
-//   <div className="Links w-[30%] flex justify-between">
-//     <div>
-//       <div className="text-xl text-center mb-2">About</div>
-//       <div className="text-center">
-//         <div>Home</div>
-//         <div>About Us</div>
-//       </div>
-//     </div>
-//     <div>
-//       <div className="text-xl text-center mb-2">Categories</div>
-//       <div className="">
-//         <div>Care and Maintenance</div>
-//         <div>Best Foods for Discus Fish</div>
-//         <div>Health and Diseases</div>
-//         <div>Breeding and Raising Fry</div>
-//         <div>Tank Setup and Equipments</div>
-//         <div>Species and Types</div>
-//       </div>
-//     </div>
-//   </div>
-// </div>
-// </div>

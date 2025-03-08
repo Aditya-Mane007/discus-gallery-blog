@@ -8,7 +8,6 @@ const handler = async (req, res) => {
 
   const post = await fetchData(base_url, `/posts/slug:${blogSlug}`);
 
-  console.log(post);
 
   if (post.status === 404) {
     return res.status(404).json({

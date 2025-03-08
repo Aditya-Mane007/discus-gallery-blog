@@ -4,11 +4,10 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import styles from "./blog.module.css";
 import Image from "next/image";
+import SEO from "@/pages/UI/Components/SEO/SEO";
 
 function index({ category, slug, post, tags }) {
   const [htmlContent, setHtmlContent] = useState();
-
-  console.log(post);
 
   const items = [
     { title: "Home", link: "/", icon: true },
@@ -23,6 +22,12 @@ function index({ category, slug, post, tags }) {
 
   return (
     <>
+      <SEO
+        title={post.data.title + " | Discus Gallery"}
+        description={post.data.excerpt}
+        imageURL={post.data.featured_image}
+        url={`${process.env.NEXT_PUBLIC_URL}/blog/${category}/${slug}`}
+      />
       <div className="container w-[95%] mx-auto pt-8">
         <Breadcrumb items={items} />
         <div className="my-4 md:flex md:px-0">
@@ -38,11 +43,12 @@ function index({ category, slug, post, tags }) {
               <h2>{post.data.author.name}</h2>
             </span>
             {post.data.featured_image && (
-              <img
+              <Image
                 src={post.data.featured_image}
-                width={100}
-                height={100}
+                width={1000}
+                height={1000}
                 alt={post.data.title}
+                quality={100}
                 className="w-full h-[400px] object-cover my-4 rounded-xl"
               />
             )}
@@ -66,7 +72,10 @@ function index({ category, slug, post, tags }) {
               <div className="text-[1.5rem] font-doner">Tags</div>
               <div className="flex flex-wrap">
                 {tags.map((tag, index) => (
-                  <div className="py-1 px-3 bg-blue text-[#ffffff] mr-1 my-1 rounded-xl text-base">
+                  <div
+                    className="py-1 px-3 bg-blue text-[#ffffff] mr-1 my-1 rounded-xl text-base"
+                    key={index}
+                  >
                     {tag}
                   </div>
                 ))}

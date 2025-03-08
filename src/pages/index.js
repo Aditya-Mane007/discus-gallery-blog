@@ -8,8 +8,9 @@ import Link from "next/link";
 import { MdArrowOutward } from "react-icons/md";
 import FAQ from "./UI/Components/FAQ/FAQ";
 import { fetchData } from "@/utils/utils";
-import SeoConfig from "./UI/Components/SEO/SeoConfig";
+import SeoConfig from "./UI/Components/SEO/SEO";
 import BackgroundImage from "../../public/assets/HeroBackgroundImage.jpg";
+import SEO from "./UI/Components/SEO/SEO";
 
 export const CategoryObject = {
   "Care and Maintenance": "care-and-maintenance",
@@ -113,6 +114,16 @@ function index({ categories, posts }) {
   }, [tab]);
   return (
     <>
+      <SEO
+        title="Home | Discus Gallery"
+        description=" Welcome to Discus Gallery, your ultimate destination for everything
+            related to discus fish! Whether you’re a beginner or an experienced
+            aquarist, our blog is dedicated to providing in-depth knowledge and
+            expert guidance on discus fish care, maintenance, feeding, species,
+            medicines, and more."
+        imageURL={`${process.env.NEXT_PUBLIC_URL}/assets/HeroBackgroundImage.jpg`}
+        url={`${process.env.NEXT_PUBLIC_URL}`}
+      />
       <div className="2xl:container 2xl:mx-auto w-full h-[40rem] heroSection ">
         <div className="2xl:container 2xl:mx-auto w-full h-[88.5%] my-auto flex justify-center items-center text-background">
           <div className="md:w-[80%] md:text-5xl text-3xl max-sm:text-4xl text-center font-bold">
@@ -125,13 +136,13 @@ function index({ categories, posts }) {
         <div className="slider-container">
           <Slider {...settings}>
             {categories &&
-              categories.data.map((category) => (
-                <div>
+              categories.data.map((category, index) => (
+                <div key={index}>
                   <p
-                    className={`py-4 px-6 cursor-pointer mr-1 border-none rounded-full font-doner ${
+                    className={`py-4 px-6 cursor-pointer mr-1 rounded-full font-doner border bg-blue text-[#fffff] border-blue ${
                       category.title === tab
-                        ? "bg-orange hover:opacity-95"
-                        : "bg-blue hover:bg-darkBlue"
+                        ? "bg-darkBlue hover:opacity-95"
+                        : "hover:bg-blue hover:text-[#ffffff"
                     } 
                     text-background
                       border-r-2 border-r-foreground `}
@@ -149,14 +160,16 @@ function index({ categories, posts }) {
         <div className="slider-container">
           {blogPosts.length > 0 ? (
             <Slider {...setting}>
-              {blogPosts.map((post) => (
-                <div className="mr-4">
+              {blogPosts.map((post, index) => (
+                <div className="mr-4" key={index}>
                   <div className="w-[300px] h-[400px] rounded-2xl relative flex justify-end items-end graident">
                     <div className="w-full h-full rounded-2xl absolute -z-10 ">
-                      <img
+                      <Image
                         src={post.image}
-                        width={100}
-                        height={100}
+                        width={1000}
+                        height={1000}
+                        alt={post.title}
+                        quality={100}
                         className="w-full h-full object-cover rounded-2xl"
                       />
                     </div>
@@ -164,13 +177,7 @@ function index({ categories, posts }) {
                       <h5 className="text-[#FFFFFF]">
                         posted on 12 january 2024
                       </h5>
-                      <h4 className="text-3xl text-[#FFFFFF]">
-                        {"Water Conditions for discus fish: A Comprehensive Guide".slice(
-                          0,
-                          60
-                        )}
-                        ...
-                      </h4>
+                      <h4 className="text-3xl text-[#FFFFFF]">{post.title}</h4>
                       <Link
                         href={`/blog/${CategoryObject[tab]}/${post.slug}`}
                         className="my-2 text-[#ffffff]"
@@ -188,7 +195,7 @@ function index({ categories, posts }) {
         </div>
         <Link
           href={`/blog/${tab.replaceAll(" ", "-").toLowerCase()}`}
-          className="w-fit bg-orange  flex items-center rounded-xl p-3 text-background mr-4 my-8 font-doner"
+          className="w-fit bg-darkBlue  flex items-center rounded-xl p-3 text-background mr-4 my-8 font-doner"
           style={{ wordSpacing: ".2rem" }}
         >
           Read All {tab} Blogs
