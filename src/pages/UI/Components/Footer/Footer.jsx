@@ -4,16 +4,30 @@ import { FiYoutube } from "react-icons/fi";
 import { FiInstagram } from "react-icons/fi";
 import { FiFacebook } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
-import { NavLinks } from "@/utils/CONSTANTS";
+import { FooterLinks, NavLinks } from "@/utils/CONSTANTS";
 
 // bg-gradient-to-tr from-rgba(78, 160, 186, 0.25)] from-23% to-[rgba(150, 195, 208, 0.25)] from-92%
 const tabs = [
-  "Care & Maintenance",
-  "Best Foods for Discus Fish",
-  "Health & Diseases",
-  "Breeding & Raising Fry",
-  "Tank Setup & Equipments",
-  "Species & Types",
+  {
+    title: "Care & Maintenance",
+    link: "/blog/care-and-maintenance",
+  },
+  {
+    title: "Best Foods for Discus Fish",
+    link: "/blog/best-food-for-discus-fish",
+  },
+  {
+    title: "Health & Diseases",
+    link: "/blog/health-and-diseases",
+  },
+  {
+    title: "Breeding & Raising Fry",
+    link: "/blog/breeding-and-raising-fry",
+  },
+  {
+    title: "Species & Types",
+    link: "/blog/",
+  },
 ];
 
 function Footer() {
@@ -30,7 +44,7 @@ function Footer() {
               Company
             </div>
             <div className="flex flex-col">
-              {NavLinks.map((link, index) => (
+              {FooterLinks.map((link, index) => (
                 <Link
                   key={index}
                   href={link.link}
@@ -49,10 +63,10 @@ function Footer() {
               {tabs.map((tab, index) => (
                 <Link
                   key={index}
-                  href="/"
+                  href={tab.link}
                   className="my-1 px-1 text-background underline cursor-pointer hover:text-orange"
                 >
-                  {tab}
+                  {tab.title}
                 </Link>
               ))}
             </div>

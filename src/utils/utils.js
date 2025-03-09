@@ -1,3 +1,7 @@
+import { AiOutlineYoutube } from "react-icons/ai";
+import { FaInstagram } from "react-icons/fa6";
+import { LuEarth } from "react-icons/lu";
+
 export const modifyTitle = (text) => {
   const words = text.split("-");
 
@@ -54,3 +58,18 @@ export const CategoryObject = {
   "health-and-diseases": "Health and Diseases",
   "species-and-types": "Species and Types",
 };
+
+export const socialLinks = [
+  {
+    icon: <LuEarth />,
+    Link: "https://www.discusgallery.in",
+  },
+  {
+    icon: <AiOutlineYoutube size={30} />,
+    Link: "https://www.youtube.com/@discusgallery4013",
+  },
+  {
+    icon: <FaInstagram />,
+    Link: "https://www.instagram.com/adityamane.jsx/",
+  },
+];
