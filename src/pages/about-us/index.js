@@ -5,6 +5,7 @@ import { AiOutlineYoutube } from "react-icons/ai";
 import { FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 import SEO from "../UI/Components/SEO/SEO";
+import { socialLinks } from "@/utils/utils";
 
 const whatWeCover = [
   "✅ Care & Maintenance – Learn the best practices for water quality,tank setup, and overall discus health.",
@@ -12,25 +13,6 @@ const whatWeCover = [
   "✅ Species & Types – Explore the different discus fish varieties, their unique colors, and how to choose the best for your aquarium.",
   "✅ Health & Diseases – Get expert advice on identifying, preventing, and treating common discus diseases.",
   "✅ Breeding & Fry Care – Understand the breeding process, fry care, and tips for raising healthy discus babies.",
-];
-
-const socialLinks = [
-  {
-    icon: <LuEarth />,
-    Link: "https://www.discusgallery.in",
-  },
-  {
-    icon: <AiOutlineYoutube size={30} />,
-    Link: "https://www.youtube.com/@discusgallery4013",
-  },
-  {
-    icon: <FaInstagram />,
-    Link: "https://www.instagram.com/adityamane.jsx/",
-  },
-  // Website: "DiscusGallery.in",
-  // Facebook: facebook.com / DiscusGallery,
-  // Instagram: instagram.com / DiscusGallery,
-  // YouTube: youtube.com / DiscusGallery,
 ];
 
 function page() {
@@ -51,7 +33,7 @@ function page() {
           <h1 className="text-2xl font-doner font-semibold tracking-wider">
             About Us
           </h1>
-          <p className="text-lg w-full md:w-[80%]">
+          <p className="text-lg w-full">
             Welcome to Discus Gallery, your ultimate destination for everything
             related to discus fish! Whether you’re a beginner or an experienced
             aquarist, our blog is dedicated to providing in-depth knowledge and
@@ -64,7 +46,7 @@ function page() {
           <h1 className="text-2xl font-doner font-semibold tracking-wider">
             Our Mission
           </h1>
-          <p className="text-lg w-full md:w-[80%]">
+          <p className="text-lg w-full">
             At Discus Gallery, we aim to create a community where discus fish
             enthusiasts can find reliable, well-researched, and practical
             advice. Keeping discus fish requires patience, knowledge, and the
@@ -89,7 +71,7 @@ function page() {
           <h1 className="text-2xl font-doner font-semibold tracking-wider">
             Why Trust Us?
           </h1>
-          <p className="text-lg w-full md:w-[80%]">
+          <p className="text-lg w-full">
             We are passionate about discus fish and committed to sharing
             accurate and practical information. Our content is backed by
             research, experience, and insights from expert aquarists to help you
@@ -104,7 +86,7 @@ function page() {
           <h1 className="text-2xl font-doner font-semibold tracking-wider">
             Connect With Us
           </h1>
-          <p className="text-lg w-full md:w-[80%]">
+          <p className="text-lg w-full">
             Stay updated with our latest blogs, tips, and discus fish care
             guides by following us on social media:
           </p>
