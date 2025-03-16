@@ -136,7 +136,37 @@ body {
   margin: 0.5rem 0 0.25rem 0;
 }
 
+ul {
+  list-style: decimal-leading-zero;
+  margin: 0 0 1rem 2rem;
+  &::marker {
+    text-decoration: underline;
+    font-weight: 700;
+  }
+}
+
+ul li {
+  font-size: 1.1rem;
+}
+
+ol {
+  list-style: disc;
+  margin: 0 0 1rem 2rem;
+  &::marker {
+    font-weight: 700;
+  }
+}
+
 .listTitle + ul {
+  list-style: disc !important;
+  margin: 0 0 1rem 2rem;
+  &::marker {
+    font-weight: 700;
+  }
+}
+
+.listTitle + ol {
+  list-style: disc;
   margin: 0 0 1rem 2rem;
 }
 
