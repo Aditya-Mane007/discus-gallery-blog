@@ -24,6 +24,11 @@ function GoogleAnalytics() {
           `,
         }}
       />
+      <Script
+        src="https://analytics.ahrefs.com/analytics.js"
+        data-key="GnRomsRqNrKKJm8PWcFbng"
+        async
+      />
     </>
   );
 }
