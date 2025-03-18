@@ -21,7 +21,7 @@ export const CategoryObject = {
 };
 
 function index({ categories, posts }) {
-  const [tab, setTab] = useState(categories.data[0].title);
+  const [tab, setTab] = useState("Care and Maintenance");
   const [blogPosts, setBlogPosts] = useState(posts.data);
 
   const settings = {
