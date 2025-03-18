@@ -31,11 +31,6 @@ function SEO({ title, description, imageURL, url }) {
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageURL} />
       <meta name="monetag" content="fe4ae5b57df4e5be0f1242adc7b1e392"></meta>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('vemtoutcheeg.com',9098258,document.createElement('script'))`,
-        }}
-      />
     </Head>
   );
 }
