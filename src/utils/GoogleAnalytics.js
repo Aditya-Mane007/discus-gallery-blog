@@ -29,11 +29,11 @@ function GoogleAnalytics() {
         data-key="GnRomsRqNrKKJm8PWcFbng"
         async
       />
-      <Script
+      {/* <Script
         dangerouslySetInnerHTML={{
           __html: `(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('vemtoutcheeg.com',9098258,document.createElement('script'))`,
         }}
-      />
+      /> */}
     </>
   );
 }
