@@ -118,9 +118,11 @@ function index({ category, slug, post, tags }) {
             >
               <div
                 onClick={() => setTocVisible(!tocVisible)}
-                className="flex justify-between"
+                className="flex justify-between cursor-pointer"
               >
-                <h2 className="text-2xl ">Table of content</h2>
+                <h2 className="text-2xl font-doner font-bold tracking-[.1rem]">
+                  Table of content
+                </h2>
                 <div className="cursor-pointer select-none text-2xl flex items-center">
                   {tocVisible ? <IoIosArrowUp /> : <IoIosArrowDown />}
                 </div>
