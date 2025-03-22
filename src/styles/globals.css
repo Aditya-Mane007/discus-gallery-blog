@@ -51,7 +51,7 @@
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  scroll-margin-top: -3rem;
+  scroll-margin-top: 5rem;
 }
 
 body {
@@ -177,4 +177,9 @@ ol {
 
 .image {
   margin: 1rem 0;
+}
+
+.blogContent {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120rem;
 }
