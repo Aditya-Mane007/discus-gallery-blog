@@ -81,7 +81,34 @@ function index({ category, slug, post, tags }) {
                 className="w-full h-[400px] object-cover my-4 rounded-xl"
               />
             )}
-
+            <div
+              className={`bg-blue p-4 block md:hidden ${
+                tocVisible && "pb-1"
+              } rounded-xl text-[#ffffff] my-4`}
+            >
+              <div
+                onClick={() => setTocVisible(!tocVisible)}
+                className="flex justify-between cursor-pointer"
+              >
+                <h2 className="text-2xl font-doner font-bold tracking-[.1rem]">
+                  Table of content
+                </h2>
+                <div className="cursor-pointer select-none text-2xl flex items-center">
+                  {tocVisible ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                </div>
+              </div>
+              <div>
+                {tocVisible && (
+                  <ul>
+                    {toc.map((item) => (
+                      <li>
+                        <Link href={`#${item.id}`}>{item.title}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
             <div
               className={styles.blogContent}
               dangerouslySetInnerHTML={{ __html: htmlContent }}
