@@ -183,3 +183,8 @@ ol {
   scroll-behavior: smooth;
   scroll-padding-top: 120rem;
 }
+
+.Heading2Paragraph a {
+  color: #a5783d !important;
+  font-weight: bold;
+}
