@@ -79,6 +79,7 @@ function index({ category, slug, post, tags }) {
                 alt={post.data.title}
                 quality={100}
                 className="w-full h-[400px] object-cover my-4 rounded-xl"
+                priority={true}
               />
             )}
             <div
