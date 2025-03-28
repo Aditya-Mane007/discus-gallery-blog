@@ -46,7 +46,7 @@ function Breadcrumb({ items }) {
           </Link>
 
           <meta itemProp="position" content={index + 1} />
-          {index < items.length - 1 && <IoIosArrowForward />}
+          {item.icon && <IoIosArrowForward />}
         </li>
       ))}
     </ol>
@@ -54,5 +54,3 @@ function Breadcrumb({ items }) {
 }
 
 export default Breadcrumb;
-
-
