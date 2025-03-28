@@ -4,53 +4,53 @@ import React from "react";
 import { IoIosArrowForward } from "react-icons/io";
 
 function Breadcrumb({ items }) {
-  const generateBreadCrumbSchema = () => {
-    return {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement:
-        items &&
-        items.map((item, index) => ({
-          "@type": "ListItem",
-          position: index + 1,
-          name: item.title,
-          item: `https://discusgallery.in${item.link}`,
-        })),
-    };
-  };
+  // const generateBreadCrumbSchema = () => {
+  //   return {
+  //     "@context": "https://schema.org",
+  //     "@type": "BreadcrumbList",
+  //     itemListElement:
+  //       items &&
+  //       items.map((item, index) => ({
+  //         "@type": "ListItem",
+  //         position: index + 1,
+  //         name: item.title,
+  //         item: `https://discusgallery.in${item.link}`,
+  //       })),
+  //   };
+  // };
 
   return (
-    <>
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(generateBreadCrumbSchema()),
-          }}
-        />
-      </Head>
-      <div
-        className="w-full flex flex-wrap items-center md:px-0"
-        vocab="https://schema.org/"
-        typeof="BreadcrumbList"
-      >
-        {items?.map((item, index) => (
-          <div property="itemListElement" typeof="ListItem">
+    <ol
+      className="w-full flex flex-wrap items-center md:px-0 m-0"
+      itemscope="true"
+      itemType="https://schema.org/BreadcrumbList"
+    >
+      {items &&
+        items.map((item, index) => (
+          <li
+            key={index}
+            itemScope
+            itemType="https://schema.org/ListItem"
+            itemProp="itemListElement"
+            className={`flex items-center mr-1 font-normal ${
+              item.active ? "text-darkBlue" : "text-[#212121]"
+            }`}
+          >
             <Link
-              key={index}
+              itemScope
+              itemType="https://schema.org/WebPage"
+              itemProp="item"
+              itemID={item.link}
               href={item.link}
-              className={`flex items-center mr-1 font-normal ${
-                item.active ? "text-darkBlue" : "text-[#212121]"
-              }`}
-              property="item"
-              typeof="WebPage"
             >
-              {item.title} {item.icon && <IoIosArrowForward />}
+              <span itemProp="name">{item.title}</span>
             </Link>
-          </div>
+
+            <meta itemProp="position" content={index + 1} />
+            {item.icon && <IoIosArrowForward />}
+          </li>
         ))}
-      </div>
-    </>
+    </ol>
   );
 }
 
