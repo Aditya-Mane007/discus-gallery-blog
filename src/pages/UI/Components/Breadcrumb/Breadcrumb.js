@@ -25,30 +25,31 @@ function Breadcrumb({ items }) {
       itemscope="true"
       itemType="https://schema.org/BreadcrumbList"
     >
-      {items.map((item, index) => (
-        <li
-          key={index}
-          itemScope
-          itemType="https://schema.org/ListItem"
-          itemProp="itemListElement"
-          className={`flex items-center mr-1 font-normal ${
-            item.active ? "text-darkBlue" : "text-[#212121]"
-          }`}
-        >
-          <Link
+      {items &&
+        items.map((item, index) => (
+          <li
+            key={index}
             itemScope
-            itemType="https://schema.org/WebPage"
-            itemProp="item"
-            itemID={item.link}
-            href={item.link}
+            itemType="https://schema.org/ListItem"
+            itemProp="itemListElement"
+            className={`flex items-center mr-1 font-normal ${
+              item.active ? "text-darkBlue" : "text-[#212121]"
+            }`}
           >
-            <span itemProp="name">{item.title}</span>
-          </Link>
+            <Link
+              itemScope
+              itemType="https://schema.org/WebPage"
+              itemProp="item"
+              itemID={item.link}
+              href={item.link}
+            >
+              <span itemProp="name">{item.title}</span>
+            </Link>
 
-          <meta itemProp="position" content={index + 1} />
-          {item.icon && <IoIosArrowForward />}
-        </li>
-      ))}
+            <meta itemProp="position" content={index + 1} />
+            {item.icon && <IoIosArrowForward />}
+          </li>
+        ))}
     </ol>
   );
 }
