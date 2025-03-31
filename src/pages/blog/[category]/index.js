@@ -21,7 +21,7 @@ function index({ category, categoryPosts, categoryInfo }) {
     { title: "Blog", link: "/blog", icon: true },
     {
       title: categoryInfo.data.name,
-      link: categoryInfo.data.slug,
+      link: "/" + categoryInfo.data.slug,
       active: true,
     },
   ];
