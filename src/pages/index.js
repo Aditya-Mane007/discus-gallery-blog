@@ -216,6 +216,9 @@ export const getServerSideProps = async () => {
     "/getCategories"
   );
 
+  console.log("Hello, This is test change ")
+
+
   const posts = await fetchData(
     process.env.NEXT_PUBLIC_API_URL,
     `/${categories.data[0].slug}/getPostsByCategories`
