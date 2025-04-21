@@ -35,6 +35,12 @@ function SEO({ title, description, imageURL, url }) {
         name="google-adsense-account"
         content="ca-pub-3441215479960974"
       ></meta>
+      <link
+        rel="preload"
+        as="image"
+        href="/assets/HeroBackgroundImage.jpg"
+        fetchPriority="high"
+      />
     </Head>
   );
 }

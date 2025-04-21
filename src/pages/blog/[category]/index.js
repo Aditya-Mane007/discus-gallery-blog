@@ -87,6 +87,7 @@ function index({ category, categoryPosts, categoryInfo }) {
                           height={1000}
                           alt={post.title}
                           quality={100}
+                          priority={true}
                           className="w-full h-full object-cover rounded-xl max-sm:absolute max-sm:-z-10 Bluegraident"
                         />
                       </div>
