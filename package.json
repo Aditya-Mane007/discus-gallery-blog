@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "firebase": "^11.6.0",
     "jsonwebtoken": "^9.0.2",
     "next": "15.1.5",
     "react": "^19.0.0",

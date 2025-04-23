@@ -40,6 +40,12 @@ function SEO({ title, description, imageURL, url }) {
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3441215479960974"
         crossorigin="anonymous"
       ></script>
+      <link
+        rel="preload"
+        as="image"
+        href="/assets/HeroBackgroundImage.jpg"
+        fetchPriority="high"
+      />
     </Head>
   );
 }
