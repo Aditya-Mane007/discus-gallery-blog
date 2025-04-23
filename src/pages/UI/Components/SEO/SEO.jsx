@@ -35,6 +35,11 @@ function SEO({ title, description, imageURL, url }) {
         name="google-adsense-account"
         content="ca-pub-3441215479960974"
       ></meta>
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3441215479960974"
+        crossorigin="anonymous"
+      ></script>
     </Head>
   );
 }
