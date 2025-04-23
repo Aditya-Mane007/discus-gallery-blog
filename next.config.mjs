@@ -34,6 +34,10 @@ const nextConfig = {
               .replace(/\s{2,}/g, " ")
               .trim(),
           },
+          {
+            key: "Permissions-Policy",
+            value: `'self' geolocation`,
+          },
         ],
       },
     ];
