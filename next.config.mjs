@@ -30,13 +30,14 @@ const nextConfig = {
               img-src 'self' data: https://www.google-analytics.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net;
               connect-src 'self' https://www.google-analytics.com https://pagead2.googlesyndication.com;
               frame-src https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net;
+              font-src https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap;
             `
               .replace(/\s{2,}/g, " ")
               .trim(),
           },
           {
             key: "Permissions-Policy",
-            value: `'self' geolocation`,
+            value: "'self' geolocation",
           },
         ],
       },
