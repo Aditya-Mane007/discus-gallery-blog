@@ -11,6 +11,7 @@ import { fetchData } from "@/utils/utils";
 import SeoConfig from "./UI/Components/SEO/SEO";
 import BackgroundImage from "../../public/assets/HeroBackgroundImage.jpg";
 import SEO from "./UI/Components/SEO/SEO";
+import AdComponent from "./UI/Components/AdComponent/AdComponent";
 
 export const CategoryObject = {
   "Care and Maintenance": "care-and-maintenance",
@@ -203,6 +204,8 @@ function index({ categories, posts }) {
         </Link>
       </div>
 
+      <AdComponent />
+
       <div id="faq">
         <FAQ />
       </div>
@@ -215,7 +218,6 @@ export const getServerSideProps = async () => {
     process.env.NEXT_PUBLIC_API_URL,
     "/getCategories"
   );
-
 
   const posts = await fetchData(
     process.env.NEXT_PUBLIC_API_URL,

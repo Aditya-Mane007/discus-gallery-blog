@@ -66,17 +66,12 @@ function index({ category, categoryPosts, categoryInfo }) {
         )}
 
         <div className="w-[35%] max-lg:w-full h-fit bg-blue sticky top-20 p-4 rounded-xl lg:block hidden">
-          <div>
-            <h1 className="text-[#ffffff] text-4xl font-doner">
-              {modifyTitle(categoryInfo.data.name)}
-            </h1>
-            <h2 className="text-[#cfcfcf] my-4 font-doner text-sm leading-relaxed tracking-wider">
-              {categoryInfo.data.description}
-            </h2>
-          </div>
-          <div className="w-full h-fit">
-            <AdComponent />
-          </div>
+          <h1 className="text-[#ffffff] text-4xl font-doner">
+            {modifyTitle(categoryInfo.data.name)}
+          </h1>
+          <h2 className="text-[#cfcfcf] my-4 font-doner text-sm leading-relaxed tracking-wider">
+            {categoryInfo.data.description}
+          </h2>
         </div>
         <div className="lg:pl-4 max-lg">
           <Breadcrumb items={items} />
