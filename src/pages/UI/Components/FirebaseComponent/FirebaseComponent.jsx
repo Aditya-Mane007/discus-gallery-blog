@@ -15,15 +15,14 @@
 // };
 
 // // Initialize Firebase
-// // export const app = initializeApp(firebaseConfig);
+// export const app = initializeApp(firebaseConfig);
 
-// // export const messaging = getMessaging(app);
-import React from 'react'
+// export const messaging = getMessaging(app);
+
+import React from "react";
 
 function FirebaseComponent() {
-  return (
-    <div>FirebaseComponent</div>
-  )
+  return <div>FirebaseComponent</div>;
 }
 
-export default FirebaseComponent
+export default FirebaseComponent;

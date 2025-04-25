@@ -38,7 +38,7 @@ function SEO({ title, description, imageURL, url }) {
       <link
         rel="preload"
         as="image"
-        href="/assets/HeroBackgroundImage.jpg"
+        href="/assets/HeroBackgroundImage.webp"
         fetchPriority="high"
       />
     </Head>

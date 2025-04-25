@@ -118,9 +118,9 @@ function index({ category, categoryPosts, categoryInfo }) {
           </div>
         </div>
       </div>
-      <div className="w-full h-fit">
+      {/* <div className="w-full h-fit">
         <AdComponent />
-      </div>
+      </div> */}
     </>
   );
 }

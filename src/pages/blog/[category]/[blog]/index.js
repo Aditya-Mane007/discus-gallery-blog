@@ -58,7 +58,7 @@ function index({ category, slug, post, tags }) {
         imageURL={post.data.featured_image}
         url={`${process.env.NEXT_PUBLIC_URL}/blog/${category}/${slug}`}
       />
-      <AdComponent />
+      {/* <AdComponent /> */}
       <div className="container w-[95%] mx-auto pt-8">
         <Breadcrumb items={items} />
         <div className="my-4 md:flex md:px-0">
@@ -176,7 +176,7 @@ function index({ category, slug, post, tags }) {
           </div>
         </div>
       </div>
-      <AdComponent />
+      {/* <AdComponent /> */}
     </>
   );
 }

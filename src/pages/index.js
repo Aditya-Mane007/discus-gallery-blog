@@ -204,7 +204,7 @@ function index({ categories, posts }) {
         </Link>
       </div>
 
-      <AdComponent />
+      {/* <AdComponent /> */}
 
       <div id="faq">
         <FAQ />
