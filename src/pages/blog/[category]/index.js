@@ -12,6 +12,7 @@ import { FaInfoCircle } from "react-icons/fa";
 import { IoIosCloseCircle } from "react-icons/io";
 import SeoConfig from "@/pages/UI/Components/SEO/SEO";
 import SEO from "@/pages/UI/Components/SEO/SEO";
+import AdComponent from "@/pages/UI/Components/AdComponent/AdComponent";
 
 function index({ category, categoryPosts, categoryInfo }) {
   const [showInfo, setShowInfo] = useState(true);
@@ -65,12 +66,17 @@ function index({ category, categoryPosts, categoryInfo }) {
         )}
 
         <div className="w-[35%] max-lg:w-full h-fit bg-blue sticky top-20 p-4 rounded-xl lg:block hidden">
-          <h1 className="text-[#ffffff] text-4xl font-doner">
-            {modifyTitle(categoryInfo.data.name)}
-          </h1>
-          <h2 className="text-[#cfcfcf] my-4 font-doner text-sm leading-relaxed tracking-wider">
-            {categoryInfo.data.description}
-          </h2>
+          <div>
+            <h1 className="text-[#ffffff] text-4xl font-doner">
+              {modifyTitle(categoryInfo.data.name)}
+            </h1>
+            <h2 className="text-[#cfcfcf] my-4 font-doner text-sm leading-relaxed tracking-wider">
+              {categoryInfo.data.description}
+            </h2>
+          </div>
+          <div className="w-full h-fit">
+            <AdComponent />
+          </div>
         </div>
         <div className="lg:pl-4 max-lg">
           <Breadcrumb items={items} />
@@ -116,6 +122,9 @@ function index({ category, categoryPosts, categoryInfo }) {
             )}
           </div>
         </div>
+      </div>
+      <div className="w-full h-fit">
+        <AdComponent />
       </div>
     </>
   );
