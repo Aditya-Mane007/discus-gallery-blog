@@ -7,6 +7,7 @@ import Image from "next/image";
 import SEO from "@/pages/UI/Components/SEO/SEO";
 import Link from "next/link";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import AdComponent from "@/pages/UI/Components/AdComponent/AdComponent";
 
 function index({ category, slug, post, tags }) {
   const [toc, setToc] = useState([]);
@@ -57,6 +58,7 @@ function index({ category, slug, post, tags }) {
         imageURL={post.data.featured_image}
         url={`${process.env.NEXT_PUBLIC_URL}/blog/${category}/${slug}`}
       />
+      <AdComponent />
       <div className="container w-[95%] mx-auto pt-8">
         <Breadcrumb items={items} />
         <div className="my-4 md:flex md:px-0">
@@ -174,6 +176,7 @@ function index({ category, slug, post, tags }) {
           </div>
         </div>
       </div>
+      <AdComponent />
     </>
   );
 }
