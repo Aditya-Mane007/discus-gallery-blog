@@ -125,7 +125,7 @@ function index({ categories, posts }) {
         imageURL={`${process.env.NEXT_PUBLIC_URL}/assets/HeroBackgroundImage.jpg`}
         url={`${process.env.NEXT_PUBLIC_URL}`}
       />
-      <div className="2xl:container 2xl:mx-auto w-full h-[40rem] heroSection ">
+      <div className="w-full h-[40rem] 2xl:container 2xl:mx-auto  heroSection ">
         <div className="2xl:container 2xl:mx-auto w-full h-[88.5%] my-auto flex justify-center items-center text-background">
           <h1 className="md:w-[80%] md:text-5xl text-3xl max-sm:text-4xl text-center font-bold">
             Your guide to Discus fish care, covering diet, water quality,
@@ -162,15 +162,20 @@ function index({ categories, posts }) {
           {blogPosts.length > 0 ? (
             <Slider {...setting}>
               {blogPosts.map((post, index) => (
-                <div className="mr-4" key={index}>
+                <Link
+                  href={`/blog/${CategoryObject[tab]}/${post.slug}`}
+                  className="mr-4"
+                  key={index}
+                >
                   <div className="w-[300px] h-[400px] rounded-2xl relative flex justify-end items-end graident">
                     <div className="w-full h-full rounded-2xl absolute -z-10 ">
                       <Image
                         src={post.image}
                         width={1000}
-                        height={1000}
+                        height={400}
                         alt={post.title}
                         quality={100}
+                        priority={true}
                         className="w-full h-full object-cover rounded-2xl"
                       />
                     </div>
@@ -187,7 +192,7 @@ function index({ categories, posts }) {
                       </Link>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </Slider>
           ) : (

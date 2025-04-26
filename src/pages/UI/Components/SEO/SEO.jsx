@@ -42,7 +42,7 @@ function SEO({ title, description, imageURL, url }) {
         fetchPriority="high"
       />
       <script
-        async
+        defer
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3441215479960974"
         crossorigin="anonymous"
       ></script>

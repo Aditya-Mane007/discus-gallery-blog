@@ -17,7 +17,6 @@ export default function Document() {
       </Head>
       <body className="antialiased">
         <script
-          async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3441215479960974"
           crossOrigin="anonymous"
         ></script>

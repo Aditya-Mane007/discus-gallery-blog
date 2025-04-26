@@ -63,7 +63,7 @@ function index({ category, slug, post, tags }) {
         <Breadcrumb items={items} />
         <div className="my-4 md:flex md:px-0">
           <div className="md:w-[60%] w-full">
-            <h1 className="md:text-[2.5rem] text-[2rem] font-bold leading-[3rem] font-doner ">
+            <h1 className="md:text-[2.5rem] text-[1.5rem] font-bold leading-[2rem] md:leading-[3rem] font-doner ">
               {post.data.title}
             </h1>
             <span className="flex text-[18px]">
@@ -80,7 +80,7 @@ function index({ category, slug, post, tags }) {
                 height={1000}
                 alt={post.data.title}
                 quality={100}
-                className="w-full h-[400px] object-cover my-4 rounded-xl"
+                className="w-full h-[200px] md:h-[400px] object-cover my-4 rounded-xl"
                 priority={true}
               />
             )}
@@ -93,7 +93,7 @@ function index({ category, slug, post, tags }) {
                 onClick={() => setTocVisible(!tocVisible)}
                 className="flex justify-between cursor-pointer"
               >
-                <h2 className="text-2xl font-doner font-bold tracking-[.1rem]">
+                <h2 className="text-[1rem] font-doner font-bold tracking-[.1rem]">
                   Table of content
                 </h2>
                 <div className="cursor-pointer select-none text-2xl flex items-center">
@@ -104,7 +104,7 @@ function index({ category, slug, post, tags }) {
                 {tocVisible && (
                   <ul>
                     {toc.map((item) => (
-                      <li>
+                      <li className="text-[.8rem]">
                         <Link href={`#${item.id}`}>{item.title}</Link>
                       </li>
                     ))}
@@ -118,7 +118,7 @@ function index({ category, slug, post, tags }) {
             />
 
             <div className="md:my-4">
-              <div className="text-[1.5rem] font-doner">Tags</div>
+              <div className="text-[1rem] font-doner">Tags</div>
               <div className="flex flex-wrap">
                 {tags.map((tag, index) => (
                   <div
