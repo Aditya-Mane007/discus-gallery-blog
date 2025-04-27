@@ -178,7 +178,7 @@ function index({ category, slug, post, tags }) {
   );
 }
 
-export const getServerSideProps = async (context) => {
+export const getStaticProps = async (context) => {
   const { category, blog } = context.query;
 
   const getPostBuSlug = await fetchData(
@@ -201,6 +201,7 @@ export const getServerSideProps = async (context) => {
       post: getPostBuSlug,
       tags,
     },
+    revalidate: 60,
   };
 };
 

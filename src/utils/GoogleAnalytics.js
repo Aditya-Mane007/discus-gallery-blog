@@ -25,30 +25,6 @@ function GoogleAnalytics() {
           `,
         }}
       />
-      <Script
-        src="https://analytics.ahrefs.com/analytics.js"
-        data-key="GnRomsRqNrKKJm8PWcFbng"
-        strategy="afterInteractive"
-      />
-
-      <Script
-        type="module"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-          import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
-          const firebaseConfig = {
-            apiKey: "AIzaSyABVMLibij5OF_RVvtJH3kIerhVZoFagHs",
-            authDomain: "discusgalleryblog-pn.firebaseapp.com",
-            projectId: "discusgalleryblog-pn",
-            storageBucket: "discusgalleryblog-pn.firebasestorage.app",
-            messagingSenderId: "963540924376",
-            appId: "1:963540924376:web:34df7633ff82c18695a4ad"
-          };
-          const app = initializeApp(firebaseConfig);
-        `,
-        }}
-      ></Script>
     </>
   );
 }

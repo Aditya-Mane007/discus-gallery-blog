@@ -207,7 +207,7 @@ function index({ categories, posts }) {
   );
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const categories = await fetchData(
     process.env.NEXT_PUBLIC_API_URL,
     "/getCategories"
@@ -223,6 +223,7 @@ export const getServerSideProps = async () => {
       categories,
       posts,
     },
+    revalidate: 60,
   };
 };
 

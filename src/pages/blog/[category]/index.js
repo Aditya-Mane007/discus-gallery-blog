@@ -121,7 +121,7 @@ function index({ category, categoryPosts, categoryInfo }) {
   );
 }
 
-export const getServerSideProps = async (context) => {
+export const getStaticProps = async (context) => {
   const { category } = context.query;
 
   const categoryInfo = await fetchData(
@@ -142,6 +142,7 @@ export const getServerSideProps = async (context) => {
       categoryInfo,
       categoryPosts,
     },
+    revalidate: 60,
   };
 };
 
