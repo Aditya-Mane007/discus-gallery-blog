@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Script from "next/script";
 import React from "react";
 
 function SEO({ title, description, imageURL, url }) {
