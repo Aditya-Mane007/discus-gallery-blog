@@ -188,3 +188,7 @@ ol {
   color: #a5783d !important;
   font-weight: bold;
 }
+
+.slick-track {
+  display: flex !important;
+}
