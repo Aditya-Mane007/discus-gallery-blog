@@ -191,4 +191,5 @@ ol {
 
 .slick-track {
   display: flex !important;
+  overflow: hidden;
 }
