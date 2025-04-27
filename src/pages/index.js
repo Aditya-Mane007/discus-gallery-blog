@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "./UI/Components/Navbar/Navbar";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -8,8 +7,6 @@ import Link from "next/link";
 import { MdArrowOutward } from "react-icons/md";
 import FAQ from "./UI/Components/FAQ/FAQ";
 import { fetchData } from "@/utils/utils";
-import SeoConfig from "./UI/Components/SEO/SEO";
-import BackgroundImage from "../../public/assets/HeroBackgroundImage.jpg";
 import SEO from "./UI/Components/SEO/SEO";
 
 export const CategoryObject = {
@@ -121,7 +118,7 @@ function index({ categories, posts }) {
             aquarist, our blog is dedicated to providing in-depth knowledge and
             expert guidance on discus fish care, maintenance, feeding, species,
             medicines, and more."
-        imageURL={`${process.env.NEXT_PUBLIC_URL}/assets/HeroBackgroundImage.jpg`}
+        imageURL={`${process.env.NEXT_PUBLIC_URL}/assets/HeroBackgroundImage.webp`}
         url={`${process.env.NEXT_PUBLIC_URL}`}
       />
       <div className="2xl:container 2xl:mx-auto w-full h-[40rem] heroSection ">

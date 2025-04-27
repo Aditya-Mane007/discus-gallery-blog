@@ -25,7 +25,7 @@ function page() {
             aquarist, our blog is dedicated to providing in-depth knowledge and
             expert guidance on discus fish care, maintenance, feeding, species,
             medicines, and more."
-        imageURL={`${process.env.NEXT_PUBLIC_URL}/assets/HeroBackgroundImage.jpg`}
+        imageURL={`${process.env.NEXT_PUBLIC_URL}/assets/HeroBackgroundImage.webp`}
         url={`${process.NEXT_PUBLIC_URL}`}
       />
       <div className="container mx-auto my-4 p-4 md:p-0">
