@@ -134,7 +134,7 @@ function index({ categories, posts }) {
           <Slider {...settings}>
             {categories &&
               categories.data.map((category, index) => (
-                <div key={index}>
+                <div key={index} className="w-fit">
                   <p
                     className={`py-4 px-6 cursor-pointer mr-1 rounded-full font-doner border bg-blue text-[#fffff] border-blue ${
                       category.title === tab
