@@ -52,6 +52,7 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   scroll-margin-top: 5rem;
+  overflow-x: hidden;
 }
 
 body {
