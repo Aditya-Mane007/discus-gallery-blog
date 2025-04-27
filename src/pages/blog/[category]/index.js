@@ -31,7 +31,7 @@ function index({ category, categoryPosts, categoryInfo }) {
       <SEO
         title={CategoryObject[category] + " | Discus Gallery"}
         description={categoryInfo.data.description}
-        imageURL={`${process.env.NEXT_PUBLIC_URL}/assets/HeroBackgroundImage.jpg`}
+        imageURL={`${process.env.NEXT_PUBLIC_URL}/assets/HeroBackgroundImage.webp`}
         url={`${process.env.NEXT_PUBLIC_URL}/blog/${categoryInfo.data.slug}`}
       />
       <div className="container w-[95%] mx-auto my-8 lg:flex">
