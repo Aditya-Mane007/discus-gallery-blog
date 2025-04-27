@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Script from "next/script";
 import React from "react";
 
 function SEO({ title, description, imageURL, url }) {
@@ -41,11 +42,12 @@ function SEO({ title, description, imageURL, url }) {
         href="/assets/HeroBackgroundImage.webp"
         fetchPriority="high"
       />
-      
-      <script
+
+      <Script
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3441215479960974"
         crossOrigin="anonymous"
-      ></script>
+        strategy="afterInteractive"
+      />
     </Head>
   );
 }
