@@ -9,6 +9,7 @@ import { FaPlus } from "react-icons/fa6";
 function Navbar() {
   const navbar = useContext(NavbarContext);
   const [isMobileVisible, setIsMobileVisible] = useState(false);
+
   return (
     <>
       <div className="bg-blue z-[1000]">
@@ -45,22 +46,24 @@ function Navbar() {
         </div>
       </div>
       <div
-        className={`w-[100%] absolute right-0 backdrop-blur-[15px] min-h-screen bg-blue md:hidden ${
+        className={`w-[100%] absolute right-0 top-[4.25rem] backdrop-blur-[15px] min-h-screen bg-blue md:hidden ${
           isMobileVisible ? "flex" : "hidden"
         } transition-none duration-300`}
       >
-        <div className="flex flex-col text-center w-full">
-          {NavLinks.map((link, index) => (
-            <Link
-              key={index}
-              href={link.link}
-              className="my-4 text-background"
-              onClick={() => setIsMobileVisible(false)}
-            >
-              {link.title}
-            </Link>
-          ))}
-        </div>
+        <>
+          <div className="flex flex-col text-center w-full h-full">
+            {NavLinks.map((link, index) => (
+              <Link
+                key={index}
+                href={link.link}
+                className="my-4 text-background"
+                onClick={() => setIsMobileVisible(false)}
+              >
+                {link.title}
+              </Link>
+            ))}
+          </div>
+        </>
       </div>
     </>
   );
