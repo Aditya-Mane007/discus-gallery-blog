@@ -121,7 +121,7 @@ function index({ categories, posts }) {
         imageURL={`${process.env.NEXT_PUBLIC_URL}/assets/HeroBackgroundImage.webp`}
         url={`${process.env.NEXT_PUBLIC_URL}`}
       />
-      <div className="2xl:container 2xl:mx-auto w-full h-[40rem] heroSection ">
+      <div className="2xl:container 2xl:mx-auto w-full h-[40rem] heroSection">
         <div className="2xl:container 2xl:mx-auto w-full h-[88.5%] my-auto flex justify-center items-center text-background">
           <h1 className="md:w-[80%] md:text-5xl text-3xl max-sm:text-4xl text-center font-bold">
             Your guide to Discus fish care, covering diet, water quality,
@@ -129,7 +129,7 @@ function index({ categories, posts }) {
           </h1>
         </div>
       </div>
-      <div className="my-8 container mx-auto w-[95%]">
+      <div className="my-8 container mx-auto w-[95%] overflow-x-hidden">
         <div className="slider-container">
           <Slider {...settings}>
             {categories &&
@@ -153,7 +153,7 @@ function index({ categories, posts }) {
           </Slider>
         </div>
       </div>
-      <div className="container w-[95%] mx-auto my-10">
+      <div className="container w-[95%] mx-auto my-10 overflow-x-hidden">
         <div className="slider-container">
           {blogPosts.length > 0 ? (
             <Slider {...setting}>
