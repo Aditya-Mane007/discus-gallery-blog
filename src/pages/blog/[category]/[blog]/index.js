@@ -61,10 +61,10 @@ function index({ category, slug, post, tags }) {
         <Breadcrumb items={items} />
         <div className="my-4 md:flex md:px-0">
           <div className="md:w-[60%] w-full">
-            <h1 className="md:text-[2.5rem] text-[2rem] font-bold leading-[3rem] font-doner ">
+            <h1 className="text-[1.5rem] md:text-[1.75rem] lg:text-[2.5rem] font-bold leading-[2rem] md:leading-[2.5rem] lg:leading-[3rem] font-doner ">
               {post.data.title}
             </h1>
-            <span className="flex text-[18px]">
+            <span className="flex items-center text-[1rem]">
               <h2 className="text-base">
                 Posted on {formateDate(post.data.date)}
               </h2>
@@ -78,23 +78,25 @@ function index({ category, slug, post, tags }) {
                 height={1000}
                 alt={post.data.title}
                 quality={100}
-                className="w-full h-[400px] object-cover my-4 rounded-xl"
+                className="w-full h-[250px] md:h-[400px] object-cover my-4 rounded-xl"
                 priority={true}
               />
             )}
             <div
-              className={`bg-blue p-4 block md:hidden ${
-                tocVisible && "pb-1"
-              } rounded-xl text-[#ffffff] my-4`}
+              className={`bg-blue ${
+                tocVisible ? "p-4" : "px-4 pt-4 pb-3"
+              } block md:hidden ${
+                tocVisible && "pb-[.15rem]"
+              } rounded-xl text-[#ffffff] my-4 `}
             >
               <div
                 onClick={() => setTocVisible(!tocVisible)}
-                className="flex justify-between cursor-pointer"
+                className="flex items-center justify-between cursor-pointer"
               >
-                <h2 className="text-2xl font-doner font-bold tracking-[.1rem]">
+                <h2 className="text-[1.2rem] font-doner font-bold tracking-[.1rem]">
                   Table of content
                 </h2>
-                <div className="cursor-pointer select-none text-2xl flex items-center">
+                <div className="cursor-pointer select-none text-[1rem] flex items-center">
                   {tocVisible ? <IoIosArrowUp /> : <IoIosArrowDown />}
                 </div>
               </div>
@@ -102,7 +104,7 @@ function index({ category, slug, post, tags }) {
                 {tocVisible && (
                   <ul>
                     {toc.map((item) => (
-                      <li>
+                      <li className="text-[1rem]">
                         <Link href={`#${item.id}`}>{item.title}</Link>
                       </li>
                     ))}
@@ -148,10 +150,10 @@ function index({ category, slug, post, tags }) {
                 onClick={() => setTocVisible(!tocVisible)}
                 className="flex justify-between cursor-pointer"
               >
-                <h2 className="text-2xl font-doner font-bold tracking-[.1rem]">
+                <h2 className="text-[1.5rem] font-doner font-bold tracking-[.1rem]">
                   Table of content
                 </h2>
-                <div className="cursor-pointer select-none text-2xl flex items-center">
+                <div className="cursor-pointer select-none text-[1.5rem] flex items-center">
                   {tocVisible ? <IoIosArrowUp /> : <IoIosArrowDown />}
                 </div>
               </div>
@@ -159,7 +161,7 @@ function index({ category, slug, post, tags }) {
                 {tocVisible && (
                   <ul>
                     {toc.map((item) => (
-                      <li>
+                      <li className="text-[1rem]">
                         <Link href={`#${item.id}`}>{item.title}</Link>
                       </li>
                     ))}

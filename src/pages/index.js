@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MdArrowOutward } from "react-icons/md";
 import FAQ from "./UI/Components/FAQ/FAQ";
-import { fetchData } from "@/utils/utils";
+import { fetchData, formateDate } from "@/utils/utils";
 import SEO from "./UI/Components/SEO/SEO";
 
 export const CategoryObject = {
@@ -123,7 +123,7 @@ function index({ categories, posts }) {
       />
       <div className="2xl:container 2xl:mx-auto w-full h-[40rem] heroSection">
         <div className="2xl:container 2xl:mx-auto w-full h-[88.5%] my-auto flex justify-center items-center text-background">
-          <h1 className="md:w-[80%] md:text-5xl text-3xl max-sm:text-4xl text-center font-bold">
+          <h1 className="md:w-[80%] md:text-5xl text-3xl max-sm:text-4xl text-center font-bold text-[#ffffff]">
             Your guide to Discus fish care, covering diet, water quality,
             maintenance, and thriving aquariums!
           </h1>
@@ -139,7 +139,7 @@ function index({ categories, posts }) {
                     className={`py-4 px-6 cursor-pointer mr-1 rounded-full font-doner border bg-blue text-[#fffff] border-blue ${
                       category.title === tab
                         ? "bg-darkBlue hover:opacity-95"
-                        : "hover:bg-blue hover:text-[#ffffff"
+                        : "hover:bg-blue hover:text-[#ffffff]"
                     } 
                     text-background
                       border-r-2 border-r-foreground `}
@@ -158,7 +158,11 @@ function index({ categories, posts }) {
           {blogPosts.length > 0 ? (
             <Slider {...setting}>
               {blogPosts.map((post, index) => (
-                <div className="mr-4" key={index}>
+                <div
+                  href={`/blog/${CategoryObject[tab]}/${post.slug}`}
+                  className="mr-4"
+                  key={index}
+                >
                   <div className="w-[300px] h-[400px] rounded-2xl relative flex justify-end items-end graident">
                     <div className="w-full h-full rounded-2xl absolute -z-10 ">
                       <Image
@@ -171,15 +175,16 @@ function index({ categories, posts }) {
                       />
                     </div>
                     <div className="z-10 bg-transparent  w-[90%] mx-auto my-4 ">
-                      <h5 className="text-[#FFFFFF]">
-                        posted on 12 january 2024
+                      <h5 className="text-[#ffffff]">
+                        posted on {formateDate(post.date)}
                       </h5>
-                      <h4 className="text-3xl text-[#FFFFFF]">{post.title}</h4>
+                      <h4 className="text-3xl text-[#ffffff]">{post.title}</h4>
                       <Link
                         href={`/blog/${CategoryObject[tab]}/${post.slug}`}
-                        className="my-2 text-[#ffffff]"
+                        title={post.title}
+                        className="block text-[#ffffff] my-2 truncate whitespace-nowrap overflow-hidden w-full"
                       >
-                        Read More
+                        Read More about {post.title}
                       </Link>
                     </div>
                   </div>
