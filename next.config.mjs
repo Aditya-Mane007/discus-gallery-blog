@@ -42,7 +42,7 @@ const nextConfig = {
               img-src 'self' data: https://www.google-analytics.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net;
               connect-src 'self' https://www.google-analytics.com https://pagead2.googlesyndication.com;
               frame-src https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net;
-              style-src 'self' https://fonts.googleapis.com;
+              style-src 'self' 'unsafe-inline' https://fonts.googleapis.com ;
               font-src 'self' https://fonts.gstatic.com;
             `
               .replace(/\s{2,}/g, " ")
