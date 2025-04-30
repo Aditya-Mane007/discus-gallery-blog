@@ -43,12 +43,13 @@ function SEO({ title, description, imageURL, url }) {
         fetchPriority="high"
       />
 
-      <Script
+      <script
+        async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3441215479960974"
         crossOrigin="anonymous"
-        strategy="afterInteractive"
-      ></Script>
-      <Script
+      ></script>
+      <script
+        async
         dangerouslySetInnerHTML={{
           __html: `
          (adsbygoogle = window.adsbygoogle || []).push({
