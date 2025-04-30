@@ -14,7 +14,7 @@ function Navbar() {
     <>
       <div className="bg-blue z-[1000]">
         <div className="container mx-auto py-4 flex justify-between items-center w-[95%]">
-          <Link href="/" className="text-3xl text-background font-changa">
+          <Link href="/" className="text-3xl text-[#ffffff] font-changa">
             Discus Gallery
           </Link>
           <div className="md:block hidden">
@@ -22,7 +22,7 @@ function Navbar() {
               <Link
                 key={index}
                 href={link.link}
-                className="ml-8 text-background font-semibold hover:text-orange "
+                className="ml-8 text-[#ffffff] font-semibold hover:text-orange "
               >
                 {link.title}
               </Link>
@@ -32,13 +32,13 @@ function Navbar() {
             {isMobileVisible ? (
               <FaPlus
                 size={25}
-                className="cursor-pointer rotate-45 text-background"
+                className="cursor-pointer rotate-45 text-[#ffffff]"
                 onClick={() => setIsMobileVisible(!isMobileVisible)}
               />
             ) : (
               <RiMenu3Fill
                 size={25}
-                className="cursor-pointer text-background"
+                className="cursor-pointer text-[#ffffff]"
                 onClick={() => setIsMobileVisible(!isMobileVisible)}
               />
             )}
@@ -56,7 +56,7 @@ function Navbar() {
               <Link
                 key={index}
                 href={link.link}
-                className="my-4 text-background"
+                className="my-4 text-[#ffffff]"
                 onClick={() => setIsMobileVisible(false)}
               >
                 {link.title}

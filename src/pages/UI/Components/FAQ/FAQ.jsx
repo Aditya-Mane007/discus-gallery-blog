@@ -73,7 +73,7 @@ function FAQ() {
       <div className="bg-darkBlue py-8">
         <div className="container mx-auto">
           <div
-            className="text-4xl text-center font-bold text-background my-8 font-doner tracking-wider"
+            className="text-4xl text-center font-bold text-[#ffffff] my-8 font-doner tracking-wider"
             style={{ wordSpacing: ".2rem" }}
           >
             Frequently Asked Questions
@@ -81,7 +81,7 @@ function FAQ() {
           <div className="md:w-[70%] w-[95%] mx-auto y-12">
             {Faqs.map((faq, index) => (
               <div
-                className="text-background my-4 cursor-pointer bg-blue rounded-xl"
+                className="text-[#ffffff] my-4 cursor-pointer bg-blue rounded-xl"
                 key={index}
               >
                 <div

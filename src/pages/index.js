@@ -122,7 +122,7 @@ function index({ categories, posts }) {
         url={`${process.env.NEXT_PUBLIC_URL}`}
       />
       <div className="2xl:container 2xl:mx-auto w-full h-[40rem] heroSection">
-        <div className="2xl:container 2xl:mx-auto w-full h-[88.5%] my-auto flex justify-center items-center text-background">
+        <div className="2xl:container 2xl:mx-auto w-full h-[88.5%] my-auto flex justify-center items-center text-[#ffffff]">
           <h1 className="md:w-[80%] md:text-5xl text-3xl max-sm:text-4xl text-center font-bold text-[#ffffff]">
             Your guide to Discus fish care, covering diet, water quality,
             maintenance, and thriving aquariums!
@@ -136,12 +136,12 @@ function index({ categories, posts }) {
               categories.data.map((category, index) => (
                 <div key={index} className="w-fit">
                   <p
-                    className={`py-4 px-6 cursor-pointer mr-1 rounded-full font-doner border bg-blue text-[#fffff] border-blue ${
+                    className={`py-4 px-6 cursor-pointer mr-1 rounded-full font-doner border bg-blue text-[#ffffff] border-blue ${
                       category.title === tab
                         ? "bg-darkBlue hover:opacity-95"
                         : "hover:bg-blue hover:text-[#ffffff]"
                     } 
-                    text-background
+                    text-[#ffffff]
                       border-r-2 border-r-foreground `}
                     style={{ wordSpacing: ".2rem" }}
                     onClick={() => handleTabChange(category.title)}
@@ -197,7 +197,7 @@ function index({ categories, posts }) {
         </div>
         <Link
           href={`/blog/${tab.replaceAll(" ", "-").toLowerCase()}`}
-          className="w-fit bg-darkBlue  flex items-center rounded-xl p-3 text-background mr-4 my-8 font-doner"
+          className="w-fit bg-darkBlue  flex items-center rounded-xl p-3 text-[#ffffff] mr-4 my-8 font-doner"
           style={{ wordSpacing: ".2rem" }}
         >
           Read All {tab} Blogs

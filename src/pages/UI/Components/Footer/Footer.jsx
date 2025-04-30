@@ -35,12 +35,12 @@ function Footer() {
   return (
     <div className="w-full h-full bg-blue py-8">
       <div className="container mx-auto md:flex justify-between md:w-full w-[95%] ">
-        <Link href="/" className="text-3xl font-changa text-background">
+        <Link href="/" className="text-3xl font-changa text-[#ffffff]">
           Discus Gallery
         </Link>
         <div className="flex">
           <div className="md:mx-12 my-4 mr-12 md:my-0">
-            <div className="text-lg text-background font-doner mb-2 tracking-wider">
+            <div className="text-lg text-[#ffffff] font-doner mb-2 tracking-wider">
               Company
             </div>
             <div className="flex flex-col">
@@ -48,7 +48,7 @@ function Footer() {
                 <Link
                   key={index}
                   href={link.link}
-                  className="my-1  px-1 text-background underline cursor-pointer hover:text-orange"
+                  className="my-1  px-1 text-[#ffffff] underline cursor-pointer hover:text-orange"
                 >
                   {link.title}
                 </Link>
@@ -56,7 +56,7 @@ function Footer() {
             </div>
           </div>
           <div className="my-4 md:my-0">
-            <div className="text-lg text-background font-doner mb-2 tracking-wider">
+            <div className="text-lg text-[#ffffff] font-doner mb-2 tracking-wider">
               Categories
             </div>
             <div className="flex flex-col">
@@ -64,7 +64,7 @@ function Footer() {
                 <Link
                   key={index}
                   href={tab.link}
-                  className="my-1 px-1 text-background underline cursor-pointer hover:text-orange"
+                  className="my-1 px-1 text-[#ffffff] underline cursor-pointer hover:text-orange"
                 >
                   {tab.title}
                 </Link>
@@ -75,7 +75,7 @@ function Footer() {
       </div>
       <hr className="container mx-auto mt-8 mb-4 " />
       <div className="container mx-auto flex justify-between items-center md:w-full w-[90%]">
-        <div className="font-rubik flex items-center text-background ">
+        <div className="font-rubik flex items-center text-[#ffffff] ">
           <span
             className="mr-1 font-changa font-thin tracking-wider"
             style={{ wordSpacing: ".15rem" }}
@@ -87,25 +87,25 @@ function Footer() {
         <div className="flex">
           <Link href="/">
             <FiYoutube
-              className="mx-2 text-2xl text-background hover:text-orange cursor-pointer"
+              className="mx-2 text-2xl text-[#ffffff] hover:text-orange cursor-pointer"
               title="YouTube"
             />
           </Link>
           <Link href="/">
             <FiInstagram
-              className="mx-2 text-xl text-background hover:text-orange cursor-pointer"
+              className="mx-2 text-xl text-[#ffffff] hover:text-orange cursor-pointer"
               title="Instagram"
             />
           </Link>
           <Link href="/">
             <FiFacebook
-              className="mx-2 text-xl text-background hover:text-orange cursor-pointer"
+              className="mx-2 text-xl text-[#ffffff] hover:text-orange cursor-pointer"
               title="Facebook"
             />
           </Link>
           <Link href="/">
             <FaXTwitter
-              className="mx-2 text-xl text-background hover:text-orange cursor-pointer"
+              className="mx-2 text-xl text-[#ffffff] hover:text-orange cursor-pointer"
               title="Twitter"
             />
           </Link>
