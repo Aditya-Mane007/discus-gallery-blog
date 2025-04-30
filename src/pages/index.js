@@ -123,7 +123,7 @@ function index({ categories, posts }) {
       />
       <div className="2xl:container 2xl:mx-auto w-full h-[40rem] heroSection">
         <div className="2xl:container 2xl:mx-auto w-full h-[88.5%] my-auto flex justify-center items-center text-[#ffffff]">
-          <h1 className="md:w-[80%] md:text-5xl text-3xl max-sm:text-4xl text-center font-bold text-[#ffffff]">
+          <h1 className="md:w-[80%] md:text-5xl text-3xl max-sm:text-4xl text-center text-[#ffffff] font-changa">
             Your guide to Discus fish care, covering diet, water quality,
             maintenance, and thriving aquariums!
           </h1>
