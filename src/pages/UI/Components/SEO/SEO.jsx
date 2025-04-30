@@ -52,7 +52,7 @@ function SEO({ title, description, imageURL, url }) {
         dangerouslySetInnerHTML={{
           __html: `
          (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-XXXXXXXXXXXX",
+            google_ad_client: "ca-pub-3441215479960974",
             enable_page_level_ads: true
          });
          `,
