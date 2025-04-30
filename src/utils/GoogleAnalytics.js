@@ -25,6 +25,23 @@ function GoogleAnalytics() {
           `,
         }}
       />
+
+      <Script
+        strategy="afterInteractive"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3441215479960974"
+        crossOrigin="anonymous"
+      ></Script>
+      <Script
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+         (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3441215479960974",
+            enable_page_level_ads: true
+         });
+         `,
+        }}
+      />
     </>
   );
 }
