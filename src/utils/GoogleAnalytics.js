@@ -1,5 +1,20 @@
 import Script from "next/script";
-import React from "react";
+import React, { useEffect } from "react";
+
+export function AdInitializer() {
+  useEffect(() => {
+    if (typeof window !== "undefined" && !window.adsbygoogleInitialized) {
+      window.adsbygoogle = window.adsbygoogle || [];
+      window.adsbygoogle.push({
+        google_ad_client: "ca-pub-3441215479960974",
+        enable_page_level_ads: true,
+      });
+      window.adsbygoogleInitialized = true;
+    }
+  }, []);
+
+  return null;
+}
 
 function GoogleAnalytics() {
   return (
@@ -26,7 +41,9 @@ function GoogleAnalytics() {
         }}
       />
 
-      <Script
+      <AdInitializer />
+
+      {/* <Script
         strategy="afterInteractive"
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3441215479960974"
         crossOrigin="anonymous"
@@ -41,7 +58,7 @@ function GoogleAnalytics() {
          });
          `,
         }}
-      />
+      /> */}
     </>
   );
 }
