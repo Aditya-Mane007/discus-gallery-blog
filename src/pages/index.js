@@ -175,9 +175,9 @@ function index({ categories, posts }) {
                       />
                     </div>
                     <div className="z-10 bg-transparent  w-[90%] mx-auto my-4 ">
-                      <h3 className="text-[#ffffff]">
+                      <p className="text-[#ffffff]">
                         posted on {formateDate(post.date)}
-                      </h3>
+                      </p>
                       <h2 className="text-3xl text-[#ffffff]">{post.title}</h2>
                       <Link
                         href={`/blog/${CategoryObject[tab]}/${post.slug}`}
