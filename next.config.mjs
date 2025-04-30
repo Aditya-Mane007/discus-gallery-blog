@@ -38,7 +38,7 @@ const nextConfig = {
             key: "Content-Security-Policy",
             value: `
               default-src 'self';
-              script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://www.gstatic.com https://fonts.googleapis.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google;
+              script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://www.gstatic.com https://fonts.googleapis.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://vercel.live;
               img-src 'self' data: https://www.google-analytics.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google;
               connect-src 'self' https://www.google-analytics.com https://pagead2.googlesyndication.com https://ep1.adtrafficquality.google;
               frame-src https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://www.google.com/;
