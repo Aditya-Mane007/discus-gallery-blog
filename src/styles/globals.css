@@ -58,7 +58,6 @@ body {
   background: var(--background);
   /* font-family: "Rubik", serif; */
   font-family: "Rubik";
-
   scroll-behavior: smooth;
   background: linear-gradient(
     48deg,

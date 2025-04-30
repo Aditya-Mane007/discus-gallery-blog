@@ -167,8 +167,8 @@ function index({ categories, posts }) {
                     <div className="w-full h-full rounded-2xl absolute -z-10 ">
                       <Image
                         src={post.image}
-                        width={1000}
-                        height={1000}
+                        width={post.width}
+                        height={post.height}
                         alt={post.title}
                         quality={100}
                         className="w-full h-full object-cover rounded-2xl"

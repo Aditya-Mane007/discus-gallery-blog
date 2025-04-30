@@ -21,7 +21,9 @@ const handler = async (req, res) => {
         title: post.title,
         slug: post.slug,
         content: post.content,
-        image: post.featured_image,
+        image: post.post_thumbnail.URL,
+        width : post.post_thumbnail.width,
+        height: post.post_thumbnail.height
       };
 
       return formatedPosts;
