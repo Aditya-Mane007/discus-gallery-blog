@@ -43,11 +43,21 @@ function SEO({ title, description, imageURL, url }) {
         fetchPriority="high"
       />
 
-      <script
-        async
+      <Script
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3441215479960974"
         crossOrigin="anonymous"
+        strategy="afterInteractive"
       ></script>
+      <Script
+        dangerouslySetInnerHTML={{
+          __html: `
+         (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-XXXXXXXXXXXX",
+            enable_page_level_ads: true
+         });
+         `,
+        }}
+      />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
       <link
