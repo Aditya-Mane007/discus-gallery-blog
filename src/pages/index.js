@@ -67,6 +67,7 @@ function index({ categories, posts }) {
   };
 
   const setting = {
+    className: "slider variable-width",
     dots: false,
     infinite: false,
     focusOnSelect: true,
@@ -154,7 +155,7 @@ function index({ categories, posts }) {
         </div>
       </div>
       <div className="container w-[95%] mx-auto my-10 overflow-x-hidden">
-        <div className="slider-container" aria-hidden>
+        <div className="slider-container">
           {blogPosts.length > 0 ? (
             <Slider {...setting}>
               {blogPosts.map((post, index) => (
