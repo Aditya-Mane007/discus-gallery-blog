@@ -44,13 +44,13 @@ function SEO({ title, description, imageURL, url }) {
       />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-      <Script
-        strategy="afterInteractive"
+      <script
+        async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3441215479960974"
         crossOrigin="anonymous"
-      ></Script>
-      <Script
-        strategy="afterInteractive"
+      ></script>
+      <script
+        async
         dangerouslySetInnerHTML={{
           __html: `
          (adsbygoogle = window.adsbygoogle || []).push({
