@@ -71,7 +71,7 @@ function index({ categories, posts }) {
     dots: false,
     infinite: false,
     focusOnSelect: true,
-    slidesToShow: 1,
+    slidesToShow: 3,
     slidesToScroll: 1,
     variableWidth: true,
     arrows: false,
@@ -109,6 +109,7 @@ function index({ categories, posts }) {
 
     fetchPosts();
   }, [tab]);
+
   return (
     <>
       <SEO
@@ -158,11 +159,7 @@ function index({ categories, posts }) {
           {blogPosts.length > 0 ? (
             <Slider {...setting}>
               {blogPosts.map((post, index) => (
-                <div
-                  href={`/blog/${CategoryObject[tab]}/${post.slug}`}
-                  className="mr-4"
-                  key={index}
-                >
+                <div className="mr-4" key={index}>
                   <div className="w-[300px] h-[400px] rounded-2xl relative flex justify-end items-end graident">
                     <div className="w-full h-full rounded-2xl absolute -z-10 ">
                       <Image
