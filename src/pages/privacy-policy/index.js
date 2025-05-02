@@ -14,7 +14,7 @@ function index() {
         expert guidance on discus fish care, maintenance, feeding, species,
         medicines, and more."
         imageURL={`${process.env.NEXT_PUBLIC_URL}/assets/HeroBackgroundImage.webp`}
-        url={`${process.NEXT_PUBLIC_URL}/privacy-policy`}
+        url={`${process.env.NEXT_PUBLIC_URL}/privacy-policy`}
       />
       <div className="container mx-auto my-4 p-4 md:p-0">
         <div>
